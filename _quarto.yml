@@ -25,7 +25,7 @@ book:
 website:
   twitter-card: true
   open-graph: true
-  repo-url: https://github.com/yourusername/dsa-book
+  repo-url: https://github.com/AnnNaserNabil/dsa-book
   
 execute:
   freeze: auto
