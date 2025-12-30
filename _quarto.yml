@@ -1,5 +1,5 @@
 project:
-  type: website
+  type: book
   output-dir: docs
   preview: 
     port: 4200
@@ -10,31 +10,47 @@ book:
   title: "Data Structures & Algorithms: Problem Solving Guide"
   author: "Your Name"
   date: "2025"
-  chapters:
-    - index.qmd
-    - intro.qmd
-    - arrays/index.qmd
-    - arrays/two-pointers.qmd
-    - arrays/sliding-window.qmd
-    - strings/index.qmd
-    - strings/anagrams.qmd
-    - linked-lists/index.qmd
-    - stacks-queues/index.qmd
-    - trees/index.qmd
-    - graphs/index.qmd
-    - sorting-searching/index.qmd
-    - dynamic-programming/index.qmd
-    - about.qmd
-
-website:
-  title: "Data Structures & Algorithms: Problem Solving Guide"
   site-url: https://annnasernabil.github.io/dsa-book
   repo-url: https://github.com/AnnNaserNabil/dsa-book
   repo-actions: ["source", "edit", "issue"]
-  repo-branch: main
   page-navigation: true
   twitter-card: true
   open-graph: true
+  sidebar:
+    style: "docked"
+    search: true
+    collapse-level: 1
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - part: "Arrays"
+      chapters:
+        - arrays/index.qmd
+        - arrays/two-pointers.qmd
+        - arrays/sliding-window.qmd
+    - part: "Strings"
+      chapters:
+        - strings/index.qmd
+        - strings/anagrams.qmd
+    - part: "Linked Lists"
+      chapters:
+        - linked-lists/index.qmd
+    - part: "Stacks & Queues"
+      chapters:
+        - stacks-queues/index.qmd
+    - part: "Trees"
+      chapters:
+        - trees/index.qmd
+    - part: "Graphs"
+      chapters:
+        - graphs/index.qmd
+    - part: "Sorting & Searching"
+      chapters:
+        - sorting-searching/index.qmd
+    - part: "Dynamic Programming"
+      chapters:
+        - dynamic-programming/index.qmd
+    - about.qmd
 
 execute:
   freeze: auto
