@@ -9,20 +9,20 @@ format:
 ```{=html}
 <div class="hero-section fade-in">
   <h1>DSA Turtles</h1>
-  <p class="lead">How I think about DSA.</p>
-  <a href="intro.qmd" class="btn-hero" role="button">Start Reading</a>
+  <p class="lead">A programmer's notebook on Data Structures and Algorithms. Documenting the path from confusion to clarity.</p>
+  <a href="intro.qmd" class="btn-hero" role="button">cat intro.md</a>
 </div>
 ```
 
-::: {.container .fade-in style="animation-delay: 0.2s;"}
+::: {.container .fade-in style="animation-delay: 0.1s;"}
 
-## Why I am I writing this?
+## // Why am I writing this?
 
 For the longest time, Data Structures and Algorithms felt like a black box to me. I would stare at LeetCode problems, completely blanking out, or memorize solutions without truly understanding the *why*.
 
 This "book" is my attempt to change that. It's not just a textbook; it's a collection of my personal notes, the patterns I've discovered, and the strategies that finally made things click.
 
-## My Learning Path
+## // My Learning Path
 
 I didn't learn everything at once. I took it one step at a time, building my mental models layer by layer.
 
@@ -32,8 +32,10 @@ I didn't learn everything at once. I took it one step at a time, building my men
   <div class="col">
     <a href="intro.qmd" class="card-link">
       <div class="glass-card">
-        <h5>🧠 The Mindset Shift</h5>
-        <p>How I learned to love problem-solving and stop fearing the interview.</p>
+        <div class="glass-card-content">
+          <h5>🧠 The Mindset Shift</h5>
+          <p>How I learned to love problem-solving and stop fearing the interview.</p>
+        </div>
       </div>
     </a>
   </div>
@@ -41,8 +43,10 @@ I didn't learn everything at once. I took it one step at a time, building my men
   <div class="col">
     <a href="arrays/index.qmd" class="card-link">
       <div class="glass-card topic-arrays">
-        <h5>📦 Arrays: The Foundation</h5>
-        <p>Mastering Two Pointers, Sliding Windows, and other essential techniques.</p>
+        <div class="glass-card-content">
+          <h5>📦 Arrays: Foundation</h5>
+          <p>Mastering Two Pointers, Sliding Windows, and essential techniques.</p>
+        </div>
       </div>
     </a>
   </div>
@@ -50,8 +54,10 @@ I didn't learn everything at once. I took it one step at a time, building my men
   <div class="col">
     <a href="strings/index.qmd" class="card-link">
       <div class="glass-card topic-arrays">
-        <h5>🧵 Strings: More Than Text</h5>
-        <p>Unraveling Anagrams, Palindromes, and pattern matching.</p>
+        <div class="glass-card-content">
+          <h5>🧵 Strings: Patterns</h5>
+          <p>Unraveling Anagrams, Palindromes, and pattern matching.</p>
+        </div>
       </div>
     </a>
   </div>
@@ -59,8 +65,10 @@ I didn't learn everything at once. I took it one step at a time, building my men
   <div class="col">
     <a href="linked-lists/index.qmd" class="card-link">
       <div class="glass-card topic-linked-lists">
-        <h5>🔗 Linked Lists</h5>
-        <p>Connecting the dots and understanding pointers.</p>
+        <div class="glass-card-content">
+          <h5>🔗 Linked Lists</h5>
+          <p>Connecting the dots and understanding pointers.</p>
+        </div>
       </div>
     </a>
   </div>
@@ -68,8 +76,10 @@ I didn't learn everything at once. I took it one step at a time, building my men
   <div class="col">
     <a href="stacks-queues/index.qmd" class="card-link">
       <div class="glass-card">
-        <h5>🥞 Stacks & Queues</h5>
-        <p>Controlling flow with LIFO and FIFO structures.</p>
+        <div class="glass-card-content">
+          <h5>🥞 Stacks & Queues</h5>
+          <p>Controlling flow with LIFO and FIFO structures.</p>
+        </div>
       </div>
     </a>
   </div>
@@ -77,8 +87,10 @@ I didn't learn everything at once. I took it one step at a time, building my men
   <div class="col">
     <a href="trees/index.qmd" class="card-link">
       <div class="glass-card topic-linked-lists">
-        <h5>🌳 Trees: Branching Out</h5>
-        <p>Recursion, traversals, and hierarchical data.</p>
+        <div class="glass-card-content">
+          <h5>🌳 Trees: Branching</h5>
+          <p>Recursion, traversals, and hierarchical data models.</p>
+        </div>
       </div>
     </a>
   </div>
@@ -86,8 +98,10 @@ I didn't learn everything at once. I took it one step at a time, building my men
   <div class="col">
     <a href="graphs/index.qmd" class="card-link">
       <div class="glass-card topic-graphs">
-        <h5>🕸️ Graphs: The Big Picture</h5>
-        <p>BFS, DFS, and modeling real-world connections.</p>
+        <div class="glass-card-content">
+          <h5>🕸️ Graphs: Network</h5>
+          <p>BFS, DFS, and modeling real-world connections.</p>
+        </div>
       </div>
     </a>
   </div>
@@ -95,8 +109,10 @@ I didn't learn everything at once. I took it one step at a time, building my men
   <div class="col">
     <a href="sorting-searching/index.qmd" class="card-link">
       <div class="glass-card">
-        <h5>🔍 Sorting & Searching</h5>
-        <p>Finding order in chaos. Binary search and merge sort.</p>
+        <div class="glass-card-content">
+          <h5>🔍 Sorting & Searching</h5>
+          <p>Finding order in chaos. Binary search and merge sort.</p>
+        </div>
       </div>
     </a>
   </div>
@@ -104,8 +120,10 @@ I didn't learn everything at once. I took it one step at a time, building my men
   <div class="col">
     <a href="dynamic-programming/index.qmd" class="card-link">
       <div class="glass-card topic-dp">
-        <h5>💡 Dynamic Programming</h5>
-        <p>Breaking complex problems down. The beast finally tamed!</p>
+        <div class="glass-card-content">
+          <h5>💡 Dynamic Programming</h5>
+          <p>Breaking complex problems down. The beast finally tamed!</p>
+        </div>
       </div>
     </a>
   </div>
@@ -115,7 +133,7 @@ I didn't learn everything at once. I took it one step at a time, building my men
 
 <br>
 
-## How I Use These Notes
+## // How I Use These Notes
 
 Instead of dry theory, I focus on:
 
@@ -129,9 +147,9 @@ Instead of dry theory, I focus on:
 
 ```{=html}
 <div class="footer-metadata">
-  <p><strong>Author:</strong> Ann Naser Nabil</p>
-  <p><strong>Published:</strong> 2025</p>
-  <p><em>Documenting the path from confusion to clarity.</em></p>
+  <p>author = "Ann Naser Nabil";</p>
+  <p>published = 2025;</p>
+  <p>status = "learning";</p>
 </div>
 ```
 
