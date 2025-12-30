@@ -5,16 +5,14 @@ format: html
 ---
 
 ```{=html}
-<div class="jumbotron text-center">
-  <h1 class="display-3">My DSA Journey</h1>
+<div class="hero-section fade-in">
+  <h1>My DSA Journey</h1>
   <p class="lead">Documenting my path from confusion to clarity in the world of Algorithms.</p>
-  <hr class="my-4">
-  <p>A collection of my notes, patterns, and "aha!" moments.</p>
-  <a class="btn btn-light btn-lg" href="intro.qmd" role="button">Start Reading</a>
+  <a class="btn-hero" href="intro.qmd" role="button">Start Reading</a>
 </div>
 ```
 
-::: {.container}
+::: {.container .fade-in style="animation-delay: 0.2s;"}
 
 ## Why I Wrote This
 
@@ -29,100 +27,82 @@ I didn't learn everything at once. I took it one step at a time, building my men
 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
 
   <div class="col">
-    <a href="intro.qmd" class="chapter-link">
-      <div class="card chapter-card h-100">
-        <div class="card-body">
-          <h5 class="card-title">🧠 The Mindset Shift</h5>
-          <p class="card-text">How I learned to love problem-solving and stop fearing the interview.</p>
-        </div>
+    <a href="intro.qmd" class="card-link">
+      <div class="glass-card">
+        <h5>🧠 The Mindset Shift</h5>
+        <p>How I learned to love problem-solving and stop fearing the interview.</p>
       </div>
     </a>
   </div>
 
   <div class="col">
-    <a href="arrays/index.qmd" class="chapter-link">
-      <div class="card chapter-card h-100">
-        <div class="card-body">
-          <h5 class="card-title">📦 Arrays: The Foundation</h5>
-          <p class="card-text">Mastering Two Pointers, Sliding Windows, and other essential techniques.</p>
-        </div>
+    <a href="arrays/index.qmd" class="card-link">
+      <div class="glass-card topic-arrays">
+        <h5>📦 Arrays: The Foundation</h5>
+        <p>Mastering Two Pointers, Sliding Windows, and other essential techniques.</p>
       </div>
     </a>
   </div>
 
   <div class="col">
-    <a href="strings/index.qmd" class="chapter-link">
-      <div class="card chapter-card h-100">
-        <div class="card-body">
-          <h5 class="card-title">🧵 Strings: More Than Text</h5>
-          <p class="card-text">Unraveling Anagrams, Palindromes, and pattern matching.</p>
-        </div>
+    <a href="strings/index.qmd" class="card-link">
+      <div class="glass-card topic-arrays">
+        <h5>🧵 Strings: More Than Text</h5>
+        <p>Unraveling Anagrams, Palindromes, and pattern matching.</p>
       </div>
     </a>
   </div>
 
   <div class="col">
-    <a href="linked-lists/index.qmd" class="chapter-link">
-      <div class="card chapter-card h-100">
-        <div class="card-body">
-          <h5 class="card-title">🔗 Linked Lists</h5>
-          <p class="card-text">Connecting the dots and understanding pointers.</p>
-        </div>
+    <a href="linked-lists/index.qmd" class="card-link">
+      <div class="glass-card topic-linked-lists">
+        <h5>🔗 Linked Lists</h5>
+        <p>Connecting the dots and understanding pointers.</p>
       </div>
     </a>
   </div>
 
   <div class="col">
-    <a href="stacks-queues/index.qmd" class="chapter-link">
-      <div class="card chapter-card h-100">
-        <div class="card-body">
-          <h5 class="card-title">🥞 Stacks & Queues</h5>
-          <p class="card-text">Controlling flow with LIFO and FIFO structures.</p>
-        </div>
+    <a href="stacks-queues/index.qmd" class="card-link">
+      <div class="glass-card">
+        <h5>🥞 Stacks & Queues</h5>
+        <p>Controlling flow with LIFO and FIFO structures.</p>
       </div>
     </a>
   </div>
 
   <div class="col">
-    <a href="trees/index.qmd" class="chapter-link">
-      <div class="card chapter-card h-100">
-        <div class="card-body">
-          <h5 class="card-title">🌳 Trees: Branching Out</h5>
-          <p class="card-text">Recursion, traversals, and hierarchical data.</p>
-        </div>
+    <a href="trees/index.qmd" class="card-link">
+      <div class="glass-card topic-linked-lists">
+        <h5>🌳 Trees: Branching Out</h5>
+        <p>Recursion, traversals, and hierarchical data.</p>
       </div>
     </a>
   </div>
 
   <div class="col">
-    <a href="graphs/index.qmd" class="chapter-link">
-      <div class="card chapter-card h-100">
-        <div class="card-body">
-          <h5 class="card-title">🕸️ Graphs: The Big Picture</h5>
-          <p class="card-text">BFS, DFS, and modeling real-world connections.</p>
-        </div>
+    <a href="graphs/index.qmd" class="card-link">
+      <div class="glass-card topic-graphs">
+        <h5>🕸️ Graphs: The Big Picture</h5>
+        <p>BFS, DFS, and modeling real-world connections.</p>
       </div>
     </a>
   </div>
 
   <div class="col">
-    <a href="sorting-searching/index.qmd" class="chapter-link">
-      <div class="card chapter-card h-100">
-        <div class="card-body">
-          <h5 class="card-title">🔍 Sorting & Searching</h5>
-          <p class="card-text">Finding order in chaos. Binary search and merge sort.</p>
-        </div>
+    <a href="sorting-searching/index.qmd" class="card-link">
+      <div class="glass-card">
+        <h5>🔍 Sorting & Searching</h5>
+        <p>Finding order in chaos. Binary search and merge sort.</p>
       </div>
     </a>
   </div>
 
   <div class="col">
-    <a href="dynamic-programming/index.qmd" class="chapter-link">
-      <div class="card chapter-card h-100">
-        <div class="card-body">
-          <h5 class="card-title">💡 Dynamic Programming</h5>
-          <p class="card-text">Breaking complex problems down. The beast finally tamed!</p>
-        </div>
+    <a href="dynamic-programming/index.qmd" class="card-link">
+      <div class="glass-card topic-dp">
+        <h5>💡 Dynamic Programming</h5>
+        <p>Breaking complex problems down. The beast finally tamed!</p>
       </div>
     </a>
   </div>
@@ -139,8 +119,8 @@ Instead of dry theory, I focus on:
 *   **Visuals**: Diagrams because code can be hard to read.
 *   **Patterns**: Common templates that solve multiple problems.
 
-<div class="alert alert-info" role="alert">
-  <strong>Join the Journey:</strong> This is a living document. As I learn new things, I'll add them here.
-</div>
+::: {.callout-note}
+**Join the Journey:** This is a living document. As I learn new things, I'll add them here.
+:::
 
 :::
