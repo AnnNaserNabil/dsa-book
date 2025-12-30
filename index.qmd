@@ -1,20 +1,22 @@
 ---
-title: "My DSA Journey"
+title: "DSA Turtles"
 page-layout: full
-format: html
+format: 
+  html:
+    title-block-banner: false
 ---
 
 ```{=html}
 <div class="hero-section fade-in">
-  <h1>My DSA Journey</h1>
-  <p class="lead">Documenting my path from confusion to clarity in the world of Algorithms.</p>
-  <a class="btn-hero" href="intro.qmd" role="button">Start Reading</a>
+  <h1>DSA Turtles</h1>
+  <p class="lead">How I think about DSA.</p>
+  <a href="intro.qmd" class="btn-hero" role="button">Start Reading</a>
 </div>
 ```
 
 ::: {.container .fade-in style="animation-delay: 0.2s;"}
 
-## Why I Wrote This
+## Why I am I writing this?
 
 For the longest time, Data Structures and Algorithms felt like a black box to me. I would stare at LeetCode problems, completely blanking out, or memorize solutions without truly understanding the *why*.
 
@@ -124,5 +126,13 @@ Instead of dry theory, I focus on:
 ::: {.callout-note}
 **Join the Journey:** This is a living document. As I learn new things, I'll add them here.
 :::
+
+```{=html}
+<div class="footer-metadata">
+  <p><strong>Author:</strong> Ann Naser Nabil</p>
+  <p><strong>Published:</strong> 2025</p>
+  <p><em>Documenting the path from confusion to clarity.</em></p>
+</div>
+```
 
 :::
