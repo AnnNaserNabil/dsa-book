@@ -1,0 +1,130 @@
+---
+title: "Graphs"
+description: "Master graph data structures and algorithms"
+date: "2025-12-31"
+execute:
+  echo: false
+  warning: false
+---
+
+# Graphs
+
+A graph is a non-linear data structure consisting of nodes (vertices) and edges that connect these nodes. Graphs are used to represent networks, such as social networks, transportation systems, and more.
+
+## Graph Representations
+
+### 1. Adjacency List
+```python
+graph = {
+    'A': ['B', 'C'],
+    'B': ['A', 'D', 'E'],
+    'C': ['A', 'F'],
+    'D': ['B'],
+    'E': ['B', 'F'],
+    'F': ['C', 'E']
+}
+```
+
+### 2. Adjacency Matrix
+```python
+# For a graph with n nodes
+# 1 if there's an edge between i and j, 0 otherwise
+adj_matrix = [
+    [0, 1, 1, 0, 0, 0],  # A
+    [1, 0, 0, 1, 1, 0],  # B
+    [1, 0, 0, 0, 0, 1],  # C
+    [0, 1, 0, 0, 0, 0],  # D
+    [0, 1, 0, 0, 0, 1],  # E
+    [0, 0, 1, 0, 1, 0]   # F
+]
+```
+
+## Graph Traversals
+
+### 1. Depth-First Search (DFS)
+```python
+def dfs(graph, start, visited=None):
+    if visited is None:
+        visited = set()
+    visited.add(start)
+    print(start, end=' ')
+    
+    for neighbor in graph[start]:
+        if neighbor not in visited:
+            dfs(graph, neighbor, visited)
+```
+
+### 2. Breadth-First Search (BFS)
+```python
+from collections import deque
+
+def bfs(graph, start):
+    visited = set()
+    queue = deque([start])
+    visited.add(start)
+    
+    while queue:
+        vertex = queue.popleft()
+        print(vertex, end=' ')
+        
+        for neighbor in graph[vertex]:
+            if neighbor not in visited:
+                visited.add(neighbor)
+                queue.append(neighbor)
+```
+
+## Shortest Path Algorithms
+
+### 1. Dijkstra's Algorithm
+```python
+import heapq
+
+def dijkstra(graph, start):
+    distances = {vertex: float('infinity') for vertex in graph}
+    distances[start] = 0
+    pq = [(0, start)]
+    
+    while pq:
+        current_distance, current_vertex = heapq.heappop(pq)
+        
+        if current_distance > distances[current_vertex]:
+            continue
+            
+        for neighbor, weight in graph[current_vertex].items():
+            distance = current_distance + weight
+            
+            if distance < distances[neighbor]:
+                distances[neighbor] = distance
+                heapq.heappush(pq, (distance, neighbor))
+    
+    return distances
+```
+
+## Common Graph Problems
+1. [Number of Islands](https://leetcode.com/problems/number-of-islands/)
+2. [Course Schedule](https://leetcode.com/problems/course-schedule/)
+3. [Word Ladder](https://leetcode.com/problems/word-ladder/)
+4. [Alien Dictionary](https://leetcode.com/problems/alien-dictionary/)
+5. [Network Delay Time](https://leetcode.com/problems/network-delay-time/)
+
+## Graph Types
+1. **Undirected Graph**: Edges have no direction
+2. **Directed Graph (Digraph)**: Edges have direction
+3. **Weighted Graph**: Edges have weights
+4. **Cyclic/Acyclic**: Contains/doesn't contain cycles
+5. **Connected/Disconnected**: All/Not all nodes are reachable
+
+## Time Complexity
+| Algorithm | Time Complexity | Space Complexity |
+|-----------|-----------------|------------------|
+| DFS       | O(V + E)        | O(V)             |
+| BFS       | O(V + E)        | O(V)             |
+| Dijkstra  | O((V+E)log V)   | O(V)             |
+| Topological Sort | O(V + E)  | O(V)             |
+
+## Tips for Interviews
+1. Always check for empty graphs or single-node graphs
+2. Handle cycles in your traversal algorithms
+3. For shortest path problems, consider BFS for unweighted graphs
+4. Use topological sort for problems with dependencies
+5. For optimization problems, consider dynamic programming on graphs

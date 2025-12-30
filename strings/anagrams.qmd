@@ -1,0 +1,88 @@
+---
+title: "Anagrams and Frequency Counting"
+description: "Master techniques for solving anagram problems using frequency counting and sorting"
+date: "2025-12-31"
+execute:
+  echo: false
+  warning: false
+---
+
+# Anagrams and Frequency Counting
+
+An anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
+
+## Key Concepts
+
+### 1. What Makes Two Strings Anagrams?
+- Same length
+- Same frequency of each character
+- Different order of characters
+
+### 2. Common Approaches
+
+#### a) Sorting Approach
+```python
+def is_anagram(s: str, t: str) -> bool:
+    return sorted(s) == sorted(t)
+```
+- Time Complexity: O(n log n) due to sorting
+- Space Complexity: O(n) for storing sorted strings
+
+#### b) Frequency Counting with Hash Map
+```python
+def is_anagram(s: str, t: str) -> bool:
+    if len(s) != len(t):
+        return False
+        
+    freq = {}
+    for char in s:
+        freq[char] = freq.get(char, 0) + 1
+    
+    for char in t:
+        if char not in freq or freq[char] == 0:
+            return False
+        freq[char] -= 1
+    
+    return True
+```
+- Time Complexity: O(n)
+- Space Complexity: O(1) [since the size of the character set is fixed]
+
+### 3. Variations of Anagram Problems
+1. Group Anagrams
+2. Find All Anagrams in a String
+3. Valid Anagram with One Edit
+4. Palindrome Permutation
+5. Permutation in String
+
+## Example: Group Anagrams
+
+```python
+def group_anagrams(strs):
+    anagrams = {}
+    for word in strs:
+        key = tuple(sorted(word))
+        if key not in anagrams:
+            anagrams[key] = []
+        anagrams[key].append(word)
+    return list(anagrams.values())
+```
+
+## Common Pitfalls
+1. Not considering case sensitivity
+2. Not handling whitespace correctly
+3. Forgetting to check string lengths first
+4. Not considering Unicode characters
+
+## Practice Problems
+1. [Valid Anagram](https://leetcode.com/problems/valid-anagram/)
+2. [Group Anagrams](https://leetcode.com/problems/group-anagrams/)
+3. [Find All Anagrams in a String](https://leetcode.com/problems/find-all-anagrams-in-a-string/)
+4. [Permutation in String](https://leetcode.com/problems/permutation-in-string/)
+5. [Minimum Number of Steps to Make Two Strings Anagram](https://leetcode.com/problems/minimum-number-of-steps-to-make-two-strings-anagram/)
+
+## Optimization Tips
+1. For lowercase English letters, use a fixed-size array of size 26 for frequency counting
+2. For Unicode characters, use a dictionary/hash map
+3. Early termination when string lengths differ
+4. For multiple anagram checks, consider pre-processing the strings

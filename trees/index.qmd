@@ -1,0 +1,142 @@
+---
+title: "Trees and Binary Trees"
+description: "Master tree data structures and common algorithms"
+date: "2025-12-31"
+execute:
+  echo: false
+  warning: false
+---
+
+# Trees and Binary Trees
+
+## Tree Fundamentals
+
+A tree is a hierarchical data structure consisting of nodes connected by edges. Each node contains a value and references to its children.
+
+### Key Terms
+- **Node**: An element in the tree containing data and references to children
+- **Root**: The topmost node in the tree
+- **Parent/Child**: Nodes are connected by edges, with one being the parent and the other being the child
+- **Leaf**: A node with no children
+- **Depth/Level**: The number of edges from the root to the node
+- **Height**: The number of edges on the longest path from the node to a leaf
+
+## Binary Trees
+
+A binary tree is a tree where each node has at most two children, referred to as the left and right child.
+
+### Node Definition
+```python
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+```
+
+## Tree Traversals
+
+### 1. Pre-order (Root, Left, Right)
+```python
+def preorder(root):
+    if not root:
+        return []
+    return [root.val] + preorder(root.left) + preorder(root.right)
+```
+
+### 2. In-order (Left, Root, Right)
+```python
+def inorder(root):
+    if not root:
+        return []
+    return inorder(root.left) + [root.val] + inorder(root.right)
+```
+
+### 3. Post-order (Left, Right, Root)
+```python
+def postorder(root):
+    if not root:
+        return []
+    return postorder(root.left) + postorder(root.right) + [root.val]
+```
+
+### 4. Level-order (Breadth-First)
+```python
+from collections import deque
+
+def level_order(root):
+    if not root:
+        return []
+    
+    result = []
+    queue = deque([root])
+    
+    while queue:
+        level_size = len(queue)
+        current_level = []
+        
+        for _ in range(level_size):
+            node = queue.popleft()
+            current_level.append(node.val)
+            if node.left:
+                queue.append(node.left)
+            if node.right:
+                queue.append(node.right)
+        
+        result.append(current_level)
+    
+    return result
+```
+
+## Binary Search Trees (BST)
+
+A binary search tree is a binary tree where for each node:
+- All nodes in the left subtree have values less than the node's value
+- All nodes in the right subtree have values greater than the node's value
+- Both left and right subtrees are also BSTs
+
+### BST Operations
+
+#### Search
+```python
+def search_bst(root, val):
+    if not root or root.val == val:
+        return root
+    if val < root.val:
+        return search_bst(root.left, val)
+    return search_bst(root.right, val)
+```
+
+#### Insert
+```python
+def insert_into_bst(root, val):
+    if not root:
+        return TreeNode(val)
+    if val < root.val:
+        root.left = insert_into_bst(root.left, val)
+    else:
+        root.right = insert_into_bst(root.right, val)
+    return root
+```
+
+## Common Problems
+1. [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
+2. [Symmetric Tree](https://leetcode.com/problems/symmetric-tree/)
+3. [Binary Tree Level Order Traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)
+4. [Convert Sorted Array to Binary Search Tree](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/)
+5. [Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)
+
+## Time Complexity
+| Operation | Average Case | Worst Case |
+|-----------|--------------|------------|
+| Search    | O(log n)     | O(n)       |
+| Insert    | O(log n)     | O(n)       |
+| Delete    | O(log n)     | O(n)       |
+| Traversal | O(n)         | O(n)       |
+
+## Tips for Interviews
+1. Always handle the base case (node is None)
+2. Consider both recursive and iterative solutions
+3. For BST problems, use the BST property to optimize
+4. For path problems, consider both top-down and bottom-up approaches
+5. Practice drawing trees to visualize the problem

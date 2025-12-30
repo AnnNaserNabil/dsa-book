@@ -1,0 +1,62 @@
+---
+title: "String Manipulation"
+description: "Master essential string manipulation techniques and algorithms"
+date: "2025-12-31"
+execute:
+  echo: false
+  warning: false
+---
+
+# String Manipulation
+
+Strings are fundamental data structures that represent sequences of characters. This chapter covers essential string manipulation techniques and algorithms that are frequently tested in coding interviews.
+
+## Core Concepts
+
+### 1. String Basics
+- String representation in memory
+- String immutability
+- Common operations (concatenation, slicing, searching)
+
+### 2. Common Operations
+- Reversing strings
+- Anagrams and palindromes
+- String encoding/decoding
+- String matching algorithms
+
+### 3. Advanced Topics
+- Regular expressions
+- String compression
+- String interleaving
+- String partitioning
+
+## Common Patterns
+1. Two-pointer technique
+2. Sliding window
+3. Hashing for frequency counting
+4. String matching algorithms (KMP, Rabin-Karp)
+5. Suffix trees and arrays
+
+## Time Complexity Cheat Sheet
+| Operation | Time Complexity |
+|-----------|-----------------|
+| Access    | O(1)            |
+| Search    | O(n)            |
+| Insert    | O(n)            |
+| Remove    | O(n)            |
+| Concatenation | O(n + m)     |
+| Substring | O(k) where k is substring length |
+
+## Practice Problems
+1. [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)
+2. [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
+3. [Group Anagrams](https://leetcode.com/problems/group-anagrams/)
+4. [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)
+5. [String to Integer (atoi)](https://leetcode.com/problems/string-to-integer-atoi/)
+
+## Tips for Interviews
+1. Always clarify character set (ASCII, Unicode)
+2. Consider case sensitivity
+3. Handle edge cases (empty string, single character, very long strings)
+4. Consider using string builder for concatenation in loops
+5. Be familiar with built-in string methods in your language of choice

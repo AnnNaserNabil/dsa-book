@@ -1,0 +1,56 @@
+---
+title: "Sliding Window Technique"
+description: "Master the sliding window technique for efficient array and string manipulation"
+date: "2025-12-31"
+execute:
+  echo: false
+  warning: false
+---
+
+## Sliding Window Pattern
+
+The sliding window technique is used to perform a required operation on a specific window size of a given array or linked list, such as finding the longest subarray with a given sum.
+
+### When to Use
+- When dealing with arrays or strings
+- When you need to find a subarray or substring that meets certain criteria
+- When the problem requires finding something among all contiguous subarrays of a given size
+
+### Common Problems
+1. Maximum Sum Subarray of Size K
+2. Smallest Subarray with a Given Sum
+3. Longest Substring with K Distinct Characters
+4. String Anagrams
+5. Maximum Number of Vowels in a Substring
+
+### Example: Maximum Sum Subarray of Size K
+
+```python
+def max_subarray_sum(arr, k):
+    max_sum = window_sum = sum(arr[:k])
+    window_start = 0
+    
+    for window_end in range(k, len(arr)):
+        window_sum = window_sum - arr[window_start] + arr[window_end]
+        max_sum = max(max_sum, window_sum)
+        window_start += 1
+        
+    return max_sum
+```
+
+### Time Complexity
+- O(n) time | O(1) space, where n is the number of elements in the array
+
+### Types of Sliding Window
+1. **Fixed Size Window**: Window size remains constant
+2. **Dynamic Size Window**: Window size changes based on certain conditions
+
+### Practice Problems
+1. [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)
+2. [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
+3. [Fruit Into Baskets](https://leetcode.com/problems/fruit-into-baskets/)
+
+### Tips
+1. Use hash maps to keep track of elements in the current window
+2. The sliding window approach is often used with the two pointers technique
+3. For problems with negative numbers, the sliding window approach might not be directly applicable

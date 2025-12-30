@@ -1,0 +1,121 @@
+---
+title: "Stacks and Queues"
+description: "Master stack and queue data structures and their applications"
+date: "2025-12-31"
+execute:
+  echo: false
+  warning: false
+---
+
+# Stacks and Queues
+
+## Stacks
+
+A stack is a LIFO (Last In, First Out) data structure that supports the following operations:
+- `push(item)`: Add an item to the top of the stack
+- `pop()`: Remove and return the top item
+- `peek()`: Return the top item without removing it
+- `is_empty()`: Check if the stack is empty
+- `size()`: Return the number of items in the stack
+
+### Implementation (Python)
+```python
+class Stack:
+    def __init__(self):
+        self.stack = []
+    
+    def push(self, item):
+        self.stack.append(item)
+    
+    def pop(self):
+        if not self.is_empty():
+            return self.stack.pop()
+        return None
+    
+    def peek(self):
+        if not self.is_empty():
+            return self.stack[-1]
+        return None
+    
+    def is_empty(self):
+        return len(self.stack) == 0
+    
+    def size(self):
+        return len(self.stack)
+```
+
+## Queues
+
+A queue is a FIFO (First In, First Out) data structure that supports:
+- `enqueue(item)`: Add an item to the back of the queue
+- `dequeue()`: Remove and return the front item
+- `peek()`: Return the front item without removing it
+- `is_empty()`: Check if the queue is empty
+- `size()`: Return the number of items in the queue
+
+### Implementation (Python)
+```python
+from collections import deque
+
+class Queue:
+    def __init__(self):
+        self.queue = deque()
+    
+    def enqueue(self, item):
+        self.queue.append(item)
+    
+    def dequeue(self):
+        if not self.is_empty():
+            return self.queue.popleft()
+        return None
+    
+    def peek(self):
+        if not self.is_empty():
+            return self.queue[0]
+        return None
+    
+    def is_empty(self):
+        return len(self.queue) == 0
+    
+    def size(self):
+        return len(self.queue)
+```
+
+## Common Problems
+
+### Stack Problems
+1. [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)
+2. [Min Stack](https://leetcode.com/problems/min-stack/)
+3. [Evaluate Reverse Polish Notation](https://leetcode.com/problems/evaluate-reverse-polish-notation/)
+4. [Daily Temperatures](https://leetcode.com/problems/daily-temperatures/)
+5. [Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/)
+
+### Queue Problems
+1. [Implement Stack using Queues](https://leetcode.com/problems/implement-stack-using-queues/)
+2. [Implement Queue using Stacks](https://leetcode.com/problems/implement-queue-using-stacks/)
+3. [Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/)
+4. [Rotting Oranges](https://leetcode.com/problems/rotting-oranges/)
+5. [Course Schedule](https://leetcode.com/problems/course-schedule/)
+
+## Time Complexity
+
+| Operation | Stack (Array) | Stack (Linked List) | Queue (Array) | Queue (Linked List) |
+|-----------|---------------|---------------------|---------------|---------------------|
+| Access    | O(n)          | O(n)                | O(n)          | O(n)                |
+| Search    | O(n)          | O(n)                | O(n)          | O(n)                |
+| Insertion | O(1)          | O(1)                | O(1)          | O(1)                |
+| Deletion  | O(1)          | O(1)                | O(1)          | O(1)                |
+
+## Common Patterns
+1. Using stacks for LIFO operations
+2. Using queues for BFS traversal
+3. Monotonic stacks for next greater/smaller element problems
+4. Two-stack queue implementation
+5. Deque for efficient operations on both ends
+
+## Tips for Interviews
+1. Always check for empty stack/queue before pop/dequeue
+2. Consider using a dummy node for certain problems
+3. For stack problems, think about the order of elements
+4. For queue problems, consider BFS traversal patterns
+5. Remember that Python's `list` can be used as a stack, but for queues, prefer `collections.deque`

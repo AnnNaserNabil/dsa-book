@@ -1,0 +1,103 @@
+---
+title: "Linked Lists"
+description: "Master linked list data structure and common operations"
+date: "2025-12-31"
+execute:
+  echo: false
+  warning: false
+---
+
+# Linked Lists
+
+A linked list is a linear data structure where elements are stored in nodes, and each node points to the next node in the sequence. Unlike arrays, linked lists don't have indices and allow for efficient insertions and deletions.
+
+## Types of Linked Lists
+
+### 1. Singly Linked List
+- Each node points to the next node
+- Last node points to null
+- Operations: insert/delete at head/tail, search, reverse
+
+### 2. Doubly Linked List
+- Each node has pointers to both next and previous nodes
+- Allows traversal in both directions
+- More memory but more operations flexibility
+
+### 3. Circular Linked List
+- Last node points back to the first node
+- Can be singly or doubly linked
+- Useful for round-robin type operations
+
+## Time Complexity
+
+| Operation | Time Complexity |
+|-----------|-----------------|
+| Access    | O(n)            |
+| Search    | O(n)            |
+| Insertion | O(1) - at head/tail with pointer |
+| Deletion  | O(1) - at head/tail with pointer |
+|          | O(n) - at arbitrary position |
+
+## Common Operations
+
+### Node Definition (Python)
+```python
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+```
+
+### Traversal
+```python
+def traverse(head):
+    current = head
+    while current:
+        print(current.val)
+        current = current.next
+```
+
+### Insertion at Head
+```python
+def insert_at_head(head, val):
+    new_node = ListNode(val)
+    new_node.next = head
+    return new_node
+```
+
+### Deletion by Value
+```python
+def delete_node(head, val):
+    dummy = ListNode(0, head)
+    prev, current = dummy, head
+    
+    while current:
+        if current.val == val:
+            prev.next = current.next
+        else:
+            prev = current
+        current = current.next
+        
+    return dummy.next
+```
+
+## Common Patterns
+1. Two Pointers (Fast & Slow)
+2. Dummy Node for Head Modifications
+3. Reversing a Linked List
+4. Finding the Middle Node
+5. Detecting Cycles
+
+## Practice Problems
+1. [Reverse a Linked List](https://leetcode.com/problems/reverse-linked-list/)
+2. [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
+3. [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/)
+4. [Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)
+5. [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/)
+
+## Tips for Interviews
+1. Always check for edge cases (empty list, single node, etc.)
+2. Use dummy nodes to simplify head modifications
+3. Draw diagrams for complex pointer manipulations
+4. Consider recursive solutions for certain problems
+5. Be careful with pointer assignments to avoid losing references

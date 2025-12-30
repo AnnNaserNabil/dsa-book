@@ -1,0 +1,53 @@
+---
+title: "Two Pointers Technique"
+description: "Master the two pointers technique for efficient array manipulation"
+date: "2025-12-31"
+execute:
+  echo: false
+  warning: false
+---
+
+## Two Pointers Pattern
+
+The two pointers technique is an efficient way to solve problems involving arrays or linked lists where you need to find a set of elements that fulfill certain constraints.
+
+### When to Use
+- When dealing with sorted arrays (or a sorted sequence)
+- When you need to find a pair of elements in an array that meet certain criteria
+- When you need to compare each element of an array to the other elements in some way
+
+### Common Problems
+1. Pair with Target Sum
+2. Remove Duplicates
+3. Squaring a Sorted Array
+4. Triplet Sum to Zero
+5. Dutch National Flag Problem
+
+### Example: Pair with Target Sum
+
+```python
+def pair_with_target_sum(arr, target_sum):
+    left, right = 0, len(arr) - 1
+    while left < right:
+        current_sum = arr[left] + arr[right]
+        if current_sum == target_sum:
+            return [left, right]
+        if current_sum < target_sum:
+            left += 1  # Need a pair with a bigger sum
+        else:
+            right -= 1  # Need a pair with a smaller sum
+    return [-1, -1]
+```
+
+### Time Complexity
+- O(n) time | O(1) space, where n is the number of elements in the array
+
+### Practice Problems
+1. [Two Sum II - Input Array Is Sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)
+2. [3Sum](https://leetcode.com/problems/3sum/)
+3. [Container With Most Water](https://leetcode.com/problems/container-with-most-water/)
+
+### Tips
+1. The array must be sorted for the standard two-pointer approach
+2. Can be combined with other patterns like sliding window
+3. Works well with linked lists for cycle detection and finding middle elements
