@@ -1,5 +1,5 @@
 # Quarto and Jupyter
-_quarto.yml
+
 _site/
 _site_libs/
 *.ipynb_checkpoints
@@ -56,3 +56,6 @@ Thumbs.db
 
 # Output directory
 docs/
+
+/.quarto/
+**/*.quarto_ipynb

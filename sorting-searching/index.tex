@@ -1,0 +1,391 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{book}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Sorting and Searching},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{Sorting and Searching}
+\author{}
+\date{2025-12-31}
+\begin{document}
+\frontmatter
+\maketitle
+
+\renewcommand*\contentsname{Table of contents}
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+
+\mainmatter
+\chapter{Sorting and Searching}\label{sorting-and-searching}
+
+\section{Sorting Algorithms}\label{sorting-algorithms}
+
+\subsection{1. Quick Sort}\label{quick-sort}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ quick\_sort(arr):}
+    \ControlFlowTok{if} \BuiltInTok{len}\NormalTok{(arr) }\OperatorTok{\textless{}=} \DecValTok{1}\NormalTok{:}
+        \ControlFlowTok{return}\NormalTok{ arr}
+\NormalTok{    pivot }\OperatorTok{=}\NormalTok{ arr[}\BuiltInTok{len}\NormalTok{(arr) }\OperatorTok{//} \DecValTok{2}\NormalTok{]}
+\NormalTok{    left }\OperatorTok{=}\NormalTok{ [x }\ControlFlowTok{for}\NormalTok{ x }\KeywordTok{in}\NormalTok{ arr }\ControlFlowTok{if}\NormalTok{ x }\OperatorTok{\textless{}}\NormalTok{ pivot]}
+\NormalTok{    middle }\OperatorTok{=}\NormalTok{ [x }\ControlFlowTok{for}\NormalTok{ x }\KeywordTok{in}\NormalTok{ arr }\ControlFlowTok{if}\NormalTok{ x }\OperatorTok{==}\NormalTok{ pivot]}
+\NormalTok{    right }\OperatorTok{=}\NormalTok{ [x }\ControlFlowTok{for}\NormalTok{ x }\KeywordTok{in}\NormalTok{ arr }\ControlFlowTok{if}\NormalTok{ x }\OperatorTok{\textgreater{}}\NormalTok{ pivot]}
+    \ControlFlowTok{return}\NormalTok{ quick\_sort(left) }\OperatorTok{+}\NormalTok{ middle }\OperatorTok{+}\NormalTok{ quick\_sort(right)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{2. Merge Sort}\label{merge-sort}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ merge\_sort(arr):}
+    \ControlFlowTok{if} \BuiltInTok{len}\NormalTok{(arr) }\OperatorTok{\textless{}=} \DecValTok{1}\NormalTok{:}
+        \ControlFlowTok{return}\NormalTok{ arr}
+    
+\NormalTok{    mid }\OperatorTok{=} \BuiltInTok{len}\NormalTok{(arr) }\OperatorTok{//} \DecValTok{2}
+\NormalTok{    left }\OperatorTok{=}\NormalTok{ merge\_sort(arr[:mid])}
+\NormalTok{    right }\OperatorTok{=}\NormalTok{ merge\_sort(arr[mid:])}
+    
+    \ControlFlowTok{return}\NormalTok{ merge(left, right)}
+
+\KeywordTok{def}\NormalTok{ merge(left, right):}
+\NormalTok{    result }\OperatorTok{=}\NormalTok{ []}
+\NormalTok{    i }\OperatorTok{=}\NormalTok{ j }\OperatorTok{=} \DecValTok{0}
+    
+    \ControlFlowTok{while}\NormalTok{ i }\OperatorTok{\textless{}} \BuiltInTok{len}\NormalTok{(left) }\KeywordTok{and}\NormalTok{ j }\OperatorTok{\textless{}} \BuiltInTok{len}\NormalTok{(right):}
+        \ControlFlowTok{if}\NormalTok{ left[i] }\OperatorTok{\textless{}=}\NormalTok{ right[j]:}
+\NormalTok{            result.append(left[i])}
+\NormalTok{            i }\OperatorTok{+=} \DecValTok{1}
+        \ControlFlowTok{else}\NormalTok{:}
+\NormalTok{            result.append(right[j])}
+\NormalTok{            j }\OperatorTok{+=} \DecValTok{1}
+    
+\NormalTok{    result.extend(left[i:])}
+\NormalTok{    result.extend(right[j:])}
+    \ControlFlowTok{return}\NormalTok{ result}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{3. Heap Sort}\label{heap-sort}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ heap\_sort(arr):}
+\NormalTok{    n }\OperatorTok{=} \BuiltInTok{len}\NormalTok{(arr)}
+    
+    \CommentTok{\# Build max heap}
+    \ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(n}\OperatorTok{//}\DecValTok{2} \OperatorTok{{-}} \DecValTok{1}\NormalTok{, }\OperatorTok{{-}}\DecValTok{1}\NormalTok{, }\OperatorTok{{-}}\DecValTok{1}\NormalTok{):}
+\NormalTok{        heapify(arr, n, i)}
+    
+    \CommentTok{\# Extract elements one by one}
+    \ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(n}\OperatorTok{{-}}\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{, }\OperatorTok{{-}}\DecValTok{1}\NormalTok{):}
+\NormalTok{        arr[i], arr[}\DecValTok{0}\NormalTok{] }\OperatorTok{=}\NormalTok{ arr[}\DecValTok{0}\NormalTok{], arr[i]  }\CommentTok{\# Swap}
+\NormalTok{        heapify(arr, i, }\DecValTok{0}\NormalTok{)}
+
+\KeywordTok{def}\NormalTok{ heapify(arr, n, i):}
+\NormalTok{    largest }\OperatorTok{=}\NormalTok{ i}
+\NormalTok{    left }\OperatorTok{=} \DecValTok{2} \OperatorTok{*}\NormalTok{ i }\OperatorTok{+} \DecValTok{1}
+\NormalTok{    right }\OperatorTok{=} \DecValTok{2} \OperatorTok{*}\NormalTok{ i }\OperatorTok{+} \DecValTok{2}
+    
+    \ControlFlowTok{if}\NormalTok{ left }\OperatorTok{\textless{}}\NormalTok{ n }\KeywordTok{and}\NormalTok{ arr[left] }\OperatorTok{\textgreater{}}\NormalTok{ arr[largest]:}
+\NormalTok{        largest }\OperatorTok{=}\NormalTok{ left}
+    
+    \ControlFlowTok{if}\NormalTok{ right }\OperatorTok{\textless{}}\NormalTok{ n }\KeywordTok{and}\NormalTok{ arr[right] }\OperatorTok{\textgreater{}}\NormalTok{ arr[largest]:}
+\NormalTok{        largest }\OperatorTok{=}\NormalTok{ right}
+    
+    \ControlFlowTok{if}\NormalTok{ largest }\OperatorTok{!=}\NormalTok{ i:}
+\NormalTok{        arr[i], arr[largest] }\OperatorTok{=}\NormalTok{ arr[largest], arr[i]}
+\NormalTok{        heapify(arr, n, largest)}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Searching Algorithms}\label{searching-algorithms}
+
+\subsection{1. Binary Search}\label{binary-search}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ binary\_search(arr, target):}
+\NormalTok{    left, right }\OperatorTok{=} \DecValTok{0}\NormalTok{, }\BuiltInTok{len}\NormalTok{(arr) }\OperatorTok{{-}} \DecValTok{1}
+    
+    \ControlFlowTok{while}\NormalTok{ left }\OperatorTok{\textless{}=}\NormalTok{ right:}
+\NormalTok{        mid }\OperatorTok{=}\NormalTok{ (left }\OperatorTok{+}\NormalTok{ right) }\OperatorTok{//} \DecValTok{2}
+        \ControlFlowTok{if}\NormalTok{ arr[mid] }\OperatorTok{==}\NormalTok{ target:}
+            \ControlFlowTok{return}\NormalTok{ mid}
+        \ControlFlowTok{elif}\NormalTok{ arr[mid] }\OperatorTok{\textless{}}\NormalTok{ target:}
+\NormalTok{            left }\OperatorTok{=}\NormalTok{ mid }\OperatorTok{+} \DecValTok{1}
+        \ControlFlowTok{else}\NormalTok{:}
+\NormalTok{            right }\OperatorTok{=}\NormalTok{ mid }\OperatorTok{{-}} \DecValTok{1}
+    
+    \ControlFlowTok{return} \OperatorTok{{-}}\DecValTok{1}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{2. Find Kth Largest Element}\label{find-kth-largest-element}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{def}\NormalTok{ find\_kth\_largest(nums, k):}
+    \ImportTok{import}\NormalTok{ heapq}
+    
+\NormalTok{    min\_heap }\OperatorTok{=}\NormalTok{ []}
+    \ControlFlowTok{for}\NormalTok{ num }\KeywordTok{in}\NormalTok{ nums:}
+\NormalTok{        heapq.heappush(min\_heap, num)}
+        \ControlFlowTok{if} \BuiltInTok{len}\NormalTok{(min\_heap) }\OperatorTok{\textgreater{}}\NormalTok{ k:}
+\NormalTok{            heapq.heappop(min\_heap)}
+    
+    \ControlFlowTok{return}\NormalTok{ min\_heap[}\DecValTok{0}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Time Complexity}\label{time-complexity}
+
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+Algorithm & Time (Best) & Time (Avg) & Time (Worst) & Space \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Quick Sort & O(n log n) & O(n log n) & O(n²) & O(log n) \\
+Merge Sort & O(n log n) & O(n log n) & O(n log n) & O(n) \\
+Heap Sort & O(n log n) & O(n log n) & O(n log n) & O(1) \\
+Binary Search & O(1) & O(log n) & O(log n) & O(1) \\
+\end{longtable}
+
+\section{Common Problems}\label{common-problems}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \href{https://leetcode.com/problems/merge-intervals/}{Merge Intervals}
+\item
+  \href{https://leetcode.com/problems/search-in-rotated-sorted-array/}{Search
+  in Rotated Sorted Array}
+\item
+  \href{https://leetcode.com/problems/find-peak-element/}{Find Peak
+  Element}
+\item
+  \href{https://leetcode.com/problems/kth-largest-element-in-an-array/}{Kth
+  Largest Element in an Array}
+\item
+  \href{https://leetcode.com/problems/top-k-frequent-elements/}{Top K
+  Frequent Elements}
+\end{enumerate}
+
+\section{Tips for Interviews}\label{tips-for-interviews}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  For sorted arrays, always consider binary search first
+\item
+  Use two pointers technique for certain search problems
+\item
+  For Kth element problems, consider using heaps
+\item
+  Know the time/space complexity of built-in sort functions in your
+  language
+\item
+  Practice implementing sorting algorithms from scratch
+\end{enumerate}
+
+
+\backmatter
+
+
+\end{document}
