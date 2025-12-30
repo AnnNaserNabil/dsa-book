@@ -1,0 +1,58 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "Data Structures & Algorithms: Problem Solving Guide"
+  author: "Your Name"
+  date: "2025"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - arrays/index.qmd
+    - arrays/two-pointers.qmd
+    - arrays/sliding-window.qmd
+    - strings/index.qmd
+    - strings/anagrams.qmd
+    - linked-lists/index.qmd
+    - stacks-queues/index.qmd
+    - trees/index.qmd
+    - graphs/index.qmd
+    - sorting-searching/index.qmd
+    - dynamic-programming/index.qmd
+    - about.qmd
+
+website:
+  twitter-card: true
+  open-graph: true
+  repo-url: https://github.com/yourusername/dsa-book
+  
+execute:
+  freeze: auto
+  cache: true
+  warning: false
+  error: false
+
+format:
+  html:
+    theme: [cosmo, darkly]
+    css: styles.css
+    toc: true
+    toc-depth: 3
+    code-fold: true
+    code-tools: true
+    code-copy: hover
+    
+  pdf:
+    documentclass: book
+    toc: true
+    toc-depth: 3
+    
+  epub:
+    toc: true
+    toc-depth: 3
+
+editor: 
+  markdown: 
+    wrap: 72
+    canonical: true

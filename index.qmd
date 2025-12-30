@@ -1,0 +1,61 @@
+---
+title: "Data Structures & Algorithms: Problem Solving Guide"
+format: html
+---
+
+```{=html}
+<div class="jumbotron text-center">
+  <h1 class="display-4">Data Structures & Algorithms</h1>
+  <p class="lead">A comprehensive guide to problem solving with code</p>
+  <hr class="my-4">
+  <p>Master essential data structures and algorithms through practical problem solving</p>
+</div>
+```
+
+## About This Book
+
+This book is designed to help you master data structures and algorithms through hands-on problem solving. Each chapter focuses on a specific topic, starting with fundamental concepts and building up to more advanced problems.
+
+## Table of Contents
+
+1. [Introduction to Problem Solving](intro.qmd)
+2. [Arrays](arrays/index.qmd)
+   - Two Pointers Technique
+   - Sliding Window Technique
+3. [Strings](strings/index.qmd)
+   - Anagrams & Frequency Counting
+4. [Linked Lists](linked-lists/index.qmd)
+5. [Stacks & Queues](stacks-queues/index.qmd)
+6. [Trees](trees/index.qmd)
+7. [Graphs](graphs/index.qmd)
+8. [Sorting & Searching](sorting-searching/index.qmd)
+9. [Dynamic Programming](dynamic-programming/index.qmd)
+
+## How to Use This Book
+
+- Each chapter includes:
+  - Core concepts and theory
+  - Visual explanations
+  - Step-by-step problem solutions
+  - Practice problems with solutions
+  - Time and space complexity analysis
+
+## Prerequisites
+
+- Basic programming knowledge (Python preferred)
+- Understanding of basic data types and control structures
+- Familiarity with Big-O notation
+
+## Getting Started
+
+1. Clone the [GitHub repository](https://github.com/yourusername/dsa-book)
+2. Install required dependencies: `pip install -r requirements.txt`
+3. Run `quarto preview` to view the book locally
+
+## Contributing
+
+Contributions are welcome! Please read our [contributing guidelines](CONTRIBUTING.md) for details.
+
+## License
+
+This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-nc-sa/4.0/).

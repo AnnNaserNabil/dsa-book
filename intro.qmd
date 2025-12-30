@@ -1,0 +1,149 @@
+---
+title: "Introduction to Problem Solving"
+format: html
+toc: true
+---
+
+# Introduction to Problem Solving with Data Structures and Algorithms
+
+## Why Study Data Structures and Algorithms?
+
+Data structures and algorithms (DSA) form the foundation of computer science and software engineering. They are essential for:
+
+- Writing efficient and scalable code
+- Solving complex problems methodically
+- Acing technical interviews
+- Building robust software systems
+
+## Problem-Solving Approach
+
+### 1. Understand the Problem
+- Read the problem statement carefully
+- Identify input/output formats and constraints
+- Ask clarifying questions if needed
+- Work through examples by hand
+
+### 2. Design an Algorithm
+- Break down the problem into smaller subproblems
+- Consider different approaches (brute force first, then optimize)
+- Analyze time and space complexity
+- Choose the most appropriate data structures
+
+### 3. Implement the Solution
+- Write clean, modular code
+- Use meaningful variable names
+- Add comments for complex logic
+- Handle edge cases
+
+### 4. Test and Debug
+- Test with sample inputs
+- Consider edge cases (empty inputs, large inputs, etc.)
+- Verify time and space complexity
+- Optimize if necessary
+
+## Time and Space Complexity
+
+### Big-O Notation
+
+| Notation      | Name                | Example                  |
+|--------------|---------------------|--------------------------|
+| O(1)         | Constant time       | Array access by index    |
+| O(log n)     | Logarithmic         | Binary search            |
+| O(n)         | Linear              | Finding max in array     |
+| O(n log n)   | Linearithmic        | Merge sort, Quick sort   |
+| O(n²)        | Quadratic           | Bubble sort, Selection sort |
+| O(2ⁿ)        | Exponential         | Recursive Fibonacci      |
+| O(n!)        | Factorial           | Permutations             |
+
+## Common Data Structures
+
+| Data Structure | Description | Common Operations |
+|----------------|-------------|-------------------|
+| Array          | Contiguous memory, fixed size | Access: O(1), Search: O(n), Insert/Delete: O(n) |
+| Linked List    | Nodes with pointers | Access: O(n), Insert/Delete: O(1) at head |
+| Stack         | LIFO (Last In, First Out) | Push: O(1), Pop: O(1), Peek: O(1) |
+| Queue         | FIFO (First In, First Out) | Enqueue: O(1), Dequeue: O(1) |
+| Hash Table    | Key-value pairs with hash function | Insert/Delete/Search: O(1) average |
+| Binary Tree   | Hierarchical structure with at most 2 children per node | Varies by type |
+| Graph         | Collection of nodes and edges | Varies by representation |
+
+## Algorithm Design Techniques
+
+1. **Brute Force**
+   - Try all possible solutions
+   - Simple but often inefficient
+   - Good starting point for optimization
+
+2. **Divide and Conquer**
+   - Break problem into smaller subproblems
+   - Solve subproblems recursively
+   - Combine solutions (e.g., Merge Sort)
+
+3. **Greedy Algorithms**
+   - Make locally optimal choices
+   - May not always produce optimal solution
+   - Efficient for certain problems (e.g., Dijkstra's, Kruskal's)
+
+4. **Dynamic Programming**
+   - Break problem into overlapping subproblems
+   - Store solutions to subproblems (memoization/tabulation)
+   - Build up to final solution (e.g., Fibonacci, Knapsack)
+
+5. **Backtracking**
+   - Try different choices and backtrack if needed
+   - Often uses recursion
+   - Used in problems with multiple solutions (e.g., N-Queens, Sudoku)
+
+## Practice Problems
+
+1. **Warm-up**
+   - Find the maximum number in an array
+   - Check if a string is a palindrome
+   - Find the first non-repeating character in a string
+
+2. **Arrays**
+   - Two Sum
+   - Best Time to Buy and Sell Stock
+   - Product of Array Except Self
+
+3. **Strings**
+   - Valid Parentheses
+   - Longest Substring Without Repeating Characters
+   - Group Anagrams
+
+## Next Steps
+
+In the following chapters, we'll dive deeper into each data structure and algorithm, with detailed explanations, visualizations, and practice problems. Each chapter builds upon the previous ones, so make sure you understand the fundamentals before moving on.
+
+## Resources
+
+- [LeetCode](https://leetcode.com/)
+- [HackerRank](https://www.hackerrank.com/domains/tutorials/10-days-of-algorithms)
+- [GeeksforGeeks](https://www.geeksforgeeks.org/data-structures/)
+- [Visualgo](https://visualgo.net/)
+
+## Exercises
+
+1. Implement a function to reverse a string in-place.
+2. Write a function to check if a number is prime.
+3. Find the most frequent element in an array.
+4. Implement a stack using arrays.
+5. Write a function to generate the first n Fibonacci numbers.
+
+```python
+# Example solution for exercise 1
+def reverse_string(s: list) -> None:
+    """Reverse a string in-place using O(1) extra memory."""
+    left, right = 0, len(s) - 1
+    while left < right:
+        s[left], s[right] = s[right], s[left]
+        left += 1
+        right -= 1
+
+# Test case
+test_str = list("hello")
+reverse_string(test_str)
+print(''.join(test_str))  # Output: olleh
+```
+
+In the next chapter, we'll start with Arrays and explore various techniques to solve array-based problems efficiently.
