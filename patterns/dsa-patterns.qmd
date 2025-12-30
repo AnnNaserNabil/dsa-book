@@ -18,43 +18,361 @@ Understanding common problem-solving patterns is crucial for efficiently tacklin
 
 ## 1. Sliding Window
 
-The sliding window technique is used to solve problems involving arrays or lists where we need to find a subarray or substring that meets certain conditions.
+The sliding window technique is used to solve problems involving arrays or lists where we need to find a subarray or substring that meets certain conditions. It maintains a window of elements and efficiently slides it through the array.
+
+**When to use:**
+- Problems involving arrays/strings with subarrays/substrings
+- When you need to find/calculate something among all contiguous subarrays of a given size
+- When the input is a linear data structure like a linked list, array, or string
+
+**Time Complexity:** Typically O(n)
+**Space Complexity:** Typically O(1) or O(k) where k is the window size
 
 ### Example 1: Maximum Sum Subarray of Size K
+
+**Problem:** Given an array of integers and a number k, find the maximum sum of a subarray of size k.
+
+**Approach:**
+1. Calculate the sum of the first window of size k
+2. Slide the window by one element at a time
+3. For each new position, calculate the new window sum by subtracting the element going out and adding the new element
+4. Keep track of the maximum sum found
+
 ```python
 def max_subarray_sum(arr, k):
+    """
+    Find maximum sum of a subarray of size k
+    
+    Args:
+        arr: List of integers
+        k: Size of the subarray
+        
+    Returns:
+        Maximum sum of any subarray of size k
+        
+    Time Complexity: O(n)
+    Space Complexity: O(1)
+    """
+    if not arr or k <= 0 or k > len(arr):
+        return 0
+        
     max_sum = window_sum = sum(arr[:k])
+    
     for i in range(len(arr) - k):
         window_sum = window_sum - arr[i] + arr[i + k]
         max_sum = max(max_sum, window_sum)
+        
     return max_sum
+
+# Test Cases
+def test_max_subarray_sum():
+    # Test case 1: Normal case
+    assert max_subarray_sum([1, 4, 2, 10, 2, 3, 1, 0, 20], 4) == 24  # Subarray [2, 10, 2, 10]
+    
+    # Test case 2: All negative numbers
+    assert max_subarray_sum([-1, -4, -2, -10, -3], 2) == -3  # Subarray [-1, -2]
+    
+    # Test case 3: k equals array length
+    assert max_subarray_sum([1, 2, 3, 4], 4) == 10  # The whole array
+    
+    # Test case 4: k is 1
+    assert max_subarray_sum([1, 4, 2, 10, 2, 3, 1, 0, 20], 1) == 20  # Single element [20]
+    
+    print("All test cases pass")
+
+test_max_subarray_sum()
+```
+
+**Visualization:**
+```
+Input: [1, 4, 2, 10, 2, 3, 1, 0, 20], k = 4
+
+Window Positions:
+[1, 4, 2, 10], 2, 3, 1, 0, 20  → sum = 17
+ 1, [4, 2, 10, 2], 3, 1, 0, 20  → sum = 18 (new max)
+ 1, 4, [2, 10, 2, 3], 1, 0, 20  → sum = 17
+ 1, 4, 2, [10, 2, 3, 1], 0, 20  → sum = 16
+ 1, 4, 2, 10, [2, 3, 1, 0], 20  → sum = 6
+ 1, 4, 2, 10, 2, [3, 1, 0, 20]  → sum = 24 (new max)
+
+Maximum sum = 24
 ```
 
 ### Example 2: Longest Substring with K Distinct Characters
+
+**Problem:** Given a string, find the length of the longest substring in it with no more than K distinct characters.
+
+**Approach:**
+1. Use a hash map to track character frequencies
+2. Use a sliding window to track the current substring
+3. Expand the window by moving the right pointer
+4. When the number of distinct characters exceeds K, shrink the window from the left
+5. Keep track of the maximum length found
+
+```python
+def longest_substring_k_distinct(s, k):
+    """
+    Find the length of the longest substring with at most K distinct characters
+    
+    Args:
+        s: Input string
+        k: Maximum number of distinct characters allowed
+        
+    Returns:
+        Length of the longest substring with at most K distinct characters
+        
+    Time Complexity: O(n)
+    Space Complexity: O(k) for the hash map
+    """
+    if not s or k == 0:
+        return 0
+        
+    max_length = 0
+    window_start = 0
+    char_freq = {}
+    
+    for window_end in range(len(s)):
+        right_char = s[window_end]
+        char_freq[right_char] = char_freq.get(right_char, 0) + 1
+        
+        while len(char_freq) > k:
+            left_char = s[window_start]
+            char_freq[left_char] -= 1
+            if char_freq[left_char] == 0:
+                del char_freq[left_char]
+            window_start += 1
+            
+        max_length = max(max_length, window_end - window_start + 1)
+        
+    return max_length
+
+# Test Cases
+def test_longest_substring_k_distinct():
+    # Test case 1: Normal case
+    assert longest_substring_k_distinct("araaci", 2) == 4  # "araa"
+    
+    # Test case 2: All characters same
+    assert longest_substring_k_distinct("aaaa", 1) == 4  # "aaaa"
+    
+    # Test case 3: k is 0
+    assert longest_substring_k_distinct("abc", 0) == 0  # Empty string
+    
+    # Test case 4: k is larger than distinct characters
+    assert longest_substring_k_distinct("abc", 5) == 3  # "abc"
+    
+    print("All test cases pass")
+
+test_longest_substring_k_distinct()
+```
+
+**Visualization:**
+```
+Input: "araaci", k = 2
+
+Window State:
+[a] r a a c i  → {'a':1} (length=1)
+[a r] a a c i  → {'a':1, 'r':1} (length=2)
+[a r a] a c i  → {'a':2, 'r':1} (length=3)
+[a r a a] c i  → {'a':3, 'r':1} (length=4)  ← Max length so far
+ a [r a a c] i → {'a':2, 'c':1, 'r':1} → shrink → {'a':2, 'c':1} (length=3)
+ a r [a a c] i → {'a':2, 'c':1} (length=3)
+ a r a [a c i] → {'a':1, 'c':1, 'i':1} → shrink → {'c':1, 'i':1} (length=2)
+
+Maximum length = 4 ("araa")
+```
+
 ### Example 3: Fruits into Baskets
 ### Example 4: No-repeat Substring
 ### Example 5: Longest Substring with Same Letters after Replacement
 
 ## 2. Two Pointers
 
-Two pointers technique is useful for searching pairs in a sorted array or linked list.
+The two pointers technique is an efficient approach for solving problems involving arrays or linked lists, especially when dealing with sorted data. It uses two pointers to traverse the data structure in a single pass.
+
+**When to use:**
+- Searching for pairs in a sorted array
+- Finding a set of elements that fulfill certain constraints
+- Problems involving sorted arrays or linked lists
+- When you need to find all unique triplets, quadruplets, etc.
+
+**Time Complexity:** Typically O(n) or O(n log n)
+**Space Complexity:** Typically O(1) for in-place operations
 
 ### Example 1: Pair with Target Sum
+
+**Problem:** Given a sorted array of integers and a target sum, find a pair of numbers in the array that add up to the target sum.
+
+**Approach:**
+1. Use two pointers, one at the start and one at the end of the array
+2. Calculate the sum of the values at both pointers
+3. If the sum equals the target, return the indices
+4. If the sum is less than the target, move the left pointer right
+5. If the sum is greater than the target, move the right pointer left
+6. Continue until the pointers meet
+
 ```python
 def pair_with_target_sum(arr, target):
+    """
+    Find a pair of numbers in a sorted array that add up to the target sum
+    
+    Args:
+        arr: Sorted list of integers
+        target: Target sum to find
+        
+    Returns:
+        List containing the indices of the two numbers that add up to the target
+        [-1, -1] if no such pair exists
+        
+    Time Complexity: O(n)
+    Space Complexity: O(1)
+    """
     left, right = 0, len(arr) - 1
+    
     while left < right:
         current_sum = arr[left] + arr[right]
         if current_sum == target:
             return [left, right]
-        if current_sum < target:
-            left += 1
+        elif current_sum < target:
+            left += 1  # Need a larger sum
         else:
-            right -= 1
-    return [-1, -1]
+            right -= 1  # Need a smaller sum
+            
+    return [-1, -1]  # No pair found
+
+# Test Cases
+def test_pair_with_target_sum():
+    # Test case 1: Normal case
+    assert pair_with_target_sum([1, 2, 3, 4, 6], 6) == [1, 3]  # 2 + 4 = 6
+    
+    # Test case 2: Pair at the beginning
+    assert pair_with_target_sum([2, 5, 9, 11], 7) == [0, 1]  # 2 + 5 = 7
+    
+    # Test case 3: No valid pair
+    assert pair_with_target_sum([1, 2, 3, 4, 5], 10) == [-1, -1]
+    
+    # Test case 4: Negative numbers
+    assert pair_with_target_sum([-1, 1, 2, 3, 4], 0) == [0, 1]  # -1 + 1 = 0
+    
+    print("All test cases pass")
+
+test_pair_with_target_sum()
+```
+
+**Visualization:**
+```
+Input: [1, 2, 3, 4, 6], target = 6
+
+Initial state:
+[1, 2, 3, 4, 6]
+ ↑           ↑
+left       right (1 + 6 = 7 > 6 → move right left)
+
+After first move:
+[1, 2, 3, 4, 6]
+ ↑        ↑
+left    right (1 + 4 = 5 < 6 → move left right)
+
+After second move:
+[1, 2, 3, 4, 6]
+    ↑     ↑
+  left  right (2 + 4 = 6 = target → found pair)
+
+Result: [1, 3] (indices of 2 and 4)
 ```
 
 ### Example 2: Remove Duplicates from Sorted Array
+
+**Problem:** Given a sorted array, remove the duplicates in-place such that each element appears only once and return the new length.
+
+**Approach:**
+1. Use two pointers: one to track the current position for the next unique element (slow) and one to scan through the array (fast)
+2. If the current element is different from the previous, copy it to the next position of the slow pointer
+3. Increment the slow pointer only when we find a new unique element
+4. The length of the array with duplicates removed will be equal to the value of the slow pointer + 1
+
+```python
+def remove_duplicates(nums):
+    """
+    Remove duplicates from a sorted array in-place
+    
+    Args:
+        nums: Sorted list of integers with duplicates
+        
+    Returns:
+        Length of the array with duplicates removed
+        
+    Time Complexity: O(n)
+    Space Complexity: O(1)
+    """
+    if not nums:
+        return 0
+        
+    # Pointer for the position to place the next unique element
+    next_non_duplicate = 1
+    
+    for i in range(1, len(nums)):
+        if nums[i] != nums[next_non_duplicate - 1]:
+            nums[next_non_duplicate] = nums[i]
+            next_non_duplicate += 1
+            
+    return next_non_duplicate
+
+# Test Cases
+def test_remove_duplicates():
+    # Test case 1: Normal case
+    nums = [1, 1, 2, 2, 2, 3, 4, 4, 5]
+    length = remove_duplicates(nums)
+    assert length == 5
+    assert nums[:length] == [1, 2, 3, 4, 5]
+    
+    # Test case 2: No duplicates
+    nums = [1, 2, 3]
+    length = remove_duplicates(nums)
+    assert length == 3
+    assert nums[:length] == [1, 2, 3]
+    
+    # Test case 3: All elements same
+    nums = [1, 1, 1, 1]
+    length = remove_duplicates(nums)
+    assert length == 1
+    assert nums[:length] == [1]
+    
+    # Test case 4: Empty array
+    nums = []
+    length = remove_duplicates(nums)
+    assert length == 0
+    assert nums == []
+    
+    print("All test cases pass")
+
+test_remove_duplicates()
+```
+
+**Visualization:**
+```
+Input: [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
+
+Initial state:
+[0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
+ ↑  ↑
+ s  f (s=0, f=1, same → move f)
+
+After first unique element:
+[0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
+    ↑  ↑
+    s  f (different → copy and move s)
+
+After copy:
+[0, 1, 1, 1, 1, 2, 2, 3, 3, 4]
+    s  f (s=1, f=2)
+
+Continue until:
+[0, 1, 2, 3, 4, 2, 2, 3, 3, 4]
+             s  f (f reaches end)
+
+Result: Length = s + 1 = 5
+```
+
 ### Example 3: Squaring a Sorted Array
 ### Example 4: Triplet Sum to Zero
 ### Example 5: Dutch National Flag Problem
