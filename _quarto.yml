@@ -7,8 +7,8 @@ project:
     browser: true
 
 book:
-  title: "Turtle DSA"
-  author: "Your Name"
+  title: " DSA Turtle"
+  author: "Ann Naser Nabil"
   date: "2025"
   site-url: https://annnasernabil.github.io/dsa-book
   repo-url: https://github.com/AnnNaserNabil/dsa-book

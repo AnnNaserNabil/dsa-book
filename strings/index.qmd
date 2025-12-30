@@ -7,9 +7,11 @@ execute:
   warning: false
 ---
 
-# String Manipulation
+# Strings: More Than Just Text
 
-Strings are fundamental data structures that represent sequences of characters. This chapter covers essential string manipulation techniques and algorithms that are frequently tested in coding interviews.
+I used to think strings were boring. Just text, right? Wrong. Strings are where I learned that "hidden complexity" is a real thing.
+ 
+ **My realization:** Strings are just arrays of characters, but with a lot more edge cases (case sensitivity, whitespace, encodings).
 
 ## Core Concepts
 

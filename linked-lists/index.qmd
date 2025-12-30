@@ -7,9 +7,11 @@ execute:
   warning: false
 ---
 
-# Linked Lists
+# Linked Lists: Connecting the Dots
 
-A linked list is a linear data structure where elements are stored in nodes, and each node points to the next node in the sequence. Unlike arrays, linked lists don't have indices and allow for efficient insertions and deletions.
+Linked Lists were where I first felt like a "real" programmer. Pointers everywhere!
+ 
+ **My realization:** It's all about not losing your way. Always keep a reference to where you're going before you let go of where you are. And **always** use a dummy node.
 
 ## Types of Linked Lists
 

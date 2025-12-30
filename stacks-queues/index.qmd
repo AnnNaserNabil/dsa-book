@@ -7,7 +7,12 @@ execute:
   warning: false
 ---
 
-# Stacks and Queues
+# Stacks & Queues: Controlling the Flow
+
+Stacks and Queues are the traffic controllers of data. 
+
+**My realization:** It's all about *order*. Do I need the most recent thing (Stack) or the oldest thing (Queue)? Once I asked that, 50% of the confusion vanished.
+
 
 ## Stacks
 

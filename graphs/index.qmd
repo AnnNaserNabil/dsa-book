@@ -7,7 +7,12 @@ execute:
   warning: false
 ---
 
-# Graphs
+# Graphs: The Big Picture
+ 
+ Graphs are everywhere. Social networks, maps, the internet itself.
+ 
+ **My realization:** Don't get lost in the nodes. Focus on the relationships (edges). And BFS is your best friend for finding the shortest path.
+
 
 A graph is a non-linear data structure consisting of nodes (vertices) and edges that connect these nodes. Graphs are used to represent networks, such as social networks, transportation systems, and more.
 

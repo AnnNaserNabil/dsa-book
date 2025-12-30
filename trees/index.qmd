@@ -7,7 +7,12 @@ execute:
   warning: false
 ---
 
-# Trees and Binary Trees
+# Trees: Branching Out
+ 
+ Trees used to scare me. Recursion was a nightmare.
+ 
+ **My realization:** A tree is just a bunch of smaller trees. If I can solve it for one node and its children, I can solve it for the whole tree. Trust the recursion!
+
 
 ## Tree Fundamentals
 

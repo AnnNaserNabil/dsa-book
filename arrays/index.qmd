@@ -4,9 +4,11 @@ format: html
 toc: true
 ---
 
-# Arrays: Fundamentals and Techniques
+# Arrays: Where It All Begins
 
-Arrays are one of the most fundamental data structures in computer science. They store elements of the same type in contiguous memory locations, allowing for efficient access and manipulation.
+Arrays were the first data structure I learned, and honestly, I underestimated them. "It's just a list," I thought. But as I dug deeper, I realized that simple arrays are the building blocks for almost everything else.
+ 
+ **My biggest realization:** Most array problems aren't about the array itself, but about *how you traverse it*.
 
 ## Table of Contents
 

@@ -7,7 +7,12 @@ execute:
   warning: false
 ---
 
-# Sorting and Searching
+# Sorting & Searching: Finding Order in Chaos
+ 
+ Why sort? Because searching becomes trivial.
+ 
+ **My realization:** Divide and Conquer isn't just an algorithm strategy; it's a life strategy. Merge Sort taught me that breaking a big problem into tiny, solvable pieces is the way to go.
+
 
 ## Sorting Algorithms
 

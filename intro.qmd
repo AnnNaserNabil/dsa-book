@@ -1,45 +1,44 @@
 ---
-title: "Introduction to Problem Solving"
+title: "My Problem Solving Philosophy"
 format: html
 toc: true
 ---
 
-# Introduction to Problem Solving with Data Structures and Algorithms
+# My Approach to Problem Solving
 
-## Why Study Data Structures and Algorithms?
+## Why I'm Doing This
 
-Data structures and algorithms (DSA) form the foundation of computer science and software engineering. They are essential for:
+Data structures and algorithms used to be my nemesis. I'd freeze up in interviews, unable to think clearly. But I realized that avoiding them wasn't an option if I wanted to grow as an engineer.
 
-- Writing efficient and scalable code
-- Solving complex problems methodically
-- Acing technical interviews
-- Building robust software systems
+This isn't just about passing interviews anymore. It's about:
 
-## Problem-Solving Approach
+- **Thinking clearly**: Breaking down complex problems into manageable pieces.
+- **Writing better code**: Understanding the trade-offs I make every day.
+- **Building confidence**: Knowing that I can tackle hard problems.
 
-### 1. Understand the Problem
-- Read the problem statement carefully
-- Identify input/output formats and constraints
-- Ask clarifying questions if needed
-- Work through examples by hand
+## How I Tackle Problems Now
 
-### 2. Design an Algorithm
-- Break down the problem into smaller subproblems
-- Consider different approaches (brute force first, then optimize)
-- Analyze time and space complexity
-- Choose the most appropriate data structures
+Over time, I've developed a routine that helps me stay calm and focused.
 
-### 3. Implement the Solution
-- Write clean, modular code
-- Use meaningful variable names
-- Add comments for complex logic
-- Handle edge cases
+### 1. The "Understand" Phase
+Before writing a single line of code, I stop and ask:
+- Do I truly understand what's being asked?
+- What are the edge cases? (Empty inputs? Negatives? Duplicates?)
+- Can I solve a simple example by hand?
 
-### 4. Test and Debug
-- Test with sample inputs
-- Consider edge cases (empty inputs, large inputs, etc.)
-- Verify time and space complexity
-- Optimize if necessary
+### 2. The "Design" Phase
+I resist the urge to start coding immediately. Instead, I:
+- **Draw it out**: I use diagrams to visualize the data flow.
+- **Talk to myself**: I explain the logic out loud (rubber duck debugging works!).
+- **Start with Brute Force**: It's okay to have a slow solution first. Optimization comes later.
+
+### 3. The "Code" Phase
+When I finally code, I focus on readability.
+- Meaningful variable names (no more `x`, `y`, `z`).
+- Modular functions for distinct steps.
+
+### 4. The "Review" Phase
+I dry run my code with the examples I created in step 1. This catches 90% of my bugs before I even run the code.
 
 ## Time and Space Complexity
 

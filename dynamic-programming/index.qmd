@@ -7,7 +7,12 @@ execute:
   warning: false
 ---
 
-# Dynamic Programming
+# Dynamic Programming: Taming the Beast
+ 
+ DP was the boss battle of my DSA journey. It felt like magic until I realized it's just "smart recursion".
+ 
+ **My realization:** Don't repeat yourself. If you've solved a subproblem, save the answer! That's it. That's the whole trick.
+
 
 Dynamic Programming (DP) is a method for solving complex problems by breaking them down into simpler subproblems. It's particularly useful for optimization problems where the solution can be constructed from solutions to overlapping subproblems.
 
