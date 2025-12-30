@@ -4,7 +4,14 @@ format: html
 toc: true
 ---
 
-# Arrays: Where It All Begins
+```{=html}
+<div class="hero-section fade-in" style="background-image: linear-gradient(135deg, var(--surface-color) 0%, rgba(255, 255, 255, 0.8) 100%), url('../arrays_hero.png');">
+  <h1>Arrays</h1>
+  <p class="lead">The fundamental building blocks of linear data storage. Mastering traversal and manipulation.</p>
+</div>
+```
+
+# // Arrays: Where It All Begins
 
 Arrays were the first data structure I learned, and honestly, I underestimated them. "It's just a list," I thought. But as I dug deeper, I realized that simple arrays are the building blocks for almost everything else.
  

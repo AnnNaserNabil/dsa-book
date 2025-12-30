@@ -1,11 +1,21 @@
+```
 ---
-title: "String Manipulation"
+title: "Strings"
 description: "Master essential string manipulation techniques and algorithms"
 date: "2025-12-31"
 execute:
   echo: false
   warning: false
+format: html
+toc: true
 ---
+
+```{=html}
+<div class="hero-section fade-in" style="background-image: linear-gradient(135deg, var(--surface-color) 0%, rgba(255, 255, 255, 0.8) 100%), url('../strings_hero.png');">
+  <h1>Strings</h1>
+  <p class="lead">Unraveling the patterns within text. From anagrams to complex pattern matching.</p>
+</div>
+```
 
 # Strings: More Than Just Text
 

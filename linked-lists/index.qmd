@@ -1,13 +1,17 @@
 ---
 title: "Linked Lists"
-description: "Master linked list data structure and common operations"
-date: "2025-12-31"
-execute:
-  echo: false
-  warning: false
+format: html
+toc: true
 ---
 
-# Linked Lists: Connecting the Dots
+```{=html}
+<div class="hero-section fade-in">
+  <h1>Linked Lists</h1>
+  <p class="lead">Connecting nodes and understanding pointers. The foundation of dynamic data structures.</p>
+</div>
+```
+
+# // Linked Lists: Connecting the Dots
 
 Linked Lists were where I first felt like a "real" programmer. Pointers everywhere!
  

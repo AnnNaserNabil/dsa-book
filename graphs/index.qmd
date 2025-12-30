@@ -1,11 +1,15 @@
 ---
 title: "Graphs"
-description: "Master graph data structures and algorithms"
-date: "2025-12-31"
-execute:
-  echo: false
-  warning: false
+format: html
+toc: true
 ---
+
+```{=html}
+<div class="hero-section fade-in">
+  <h1>Graphs</h1>
+  <p class="lead">Modeling real-world connections. BFS, DFS, and the big picture of data relationships.</p>
+</div>
+```
 
 # Graphs: The Big Picture
  

@@ -6,9 +6,19 @@ execute:
   echo: false
   warning: false
 ---
+title: "Stacks & Queues"
+format: html
+toc: true
+---
 
-# Stacks & Queues: Controlling the Flow
+```{=html}
+<div class="hero-section fade-in">
+  <h1>Stacks & Queues</h1>
+  <p class="lead">Controlling flow with LIFO and FIFO. Essential tools for algorithm management.</p>
+</div>
+```
 
+# Stacks & Queues: Order in the Chaos
 Stacks and Queues are the traffic controllers of data. 
 
 **My realization:** It's all about *order*. Do I need the most recent thing (Stack) or the oldest thing (Queue)? Once I asked that, 50% of the confusion vanished.

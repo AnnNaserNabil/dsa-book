@@ -1,5 +1,8 @@
+```
 ---
-title: "Trees and Binary Trees"
+title: "Trees"
+format: html
+toc: true
 description: "Master tree data structures and common algorithms"
 date: "2025-12-31"
 execute:
@@ -7,7 +10,14 @@ execute:
   warning: false
 ---
 
-# Trees: Branching Out
+```{=html}
+<div class="hero-section fade-in">
+  <h1>Trees</h1>
+  <p class="lead">Branching out into hierarchical data. Recursion, traversals, and balanced structures.</p>
+</div>
+```
+
+# // Trees: Branching Out
  
  Trees used to scare me. Recursion was a nightmare.
  

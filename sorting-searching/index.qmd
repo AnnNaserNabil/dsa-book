@@ -1,11 +1,16 @@
+```
 ---
-title: "Sorting and Searching"
-description: "Master sorting algorithms and search techniques"
-date: "2025-12-31"
-execute:
-  echo: false
-  warning: false
+title: "Sorting & Searching"
+format: html
+toc: true
 ---
+
+```{=html}
+<div class="hero-section fade-in">
+  <h1>Sorting & Searching</h1>
+  <p class="lead">Finding order and efficiency. From binary search to advanced sorting algorithms.</p>
+</div>
+```
 
 # Sorting & Searching: Finding Order in Chaos
  

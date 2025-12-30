@@ -1,11 +1,20 @@
 ---
 title: "Dynamic Programming"
+format: html
+toc: true
 description: "Master dynamic programming techniques and patterns"
 date: "2025-12-31"
 execute:
   echo: false
   warning: false
 ---
+
+```{=html}
+<div class="hero-section fade-in">
+  <h1>Dynamic Programming</h1>
+  <p class="lead">Breaking complex problems down. Mastering the art of memoization and tabulation.</p>
+</div>
+```
 
 # Dynamic Programming: Taming the Beast
  
