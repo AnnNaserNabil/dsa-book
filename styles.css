@@ -94,17 +94,41 @@ pre,
   font-family: 'Fira Code', monospace;
 }
 
-/* Hero Section - Notebook Entry Style */
+/* Hero Section - Notebook Entry Style with Blended Image */
 .hero-section {
-  background: var(--surface-color);
+  background: linear-gradient(135deg, var(--surface-color) 0%, rgba(255, 255, 255, 0.8) 100%), url('hero.png');
+  background-size: cover;
+  background-position: center;
   border: 1px solid var(--card-border);
   border-radius: var(--border-radius);
-  padding: 4rem 2rem;
+  padding: 5rem 2rem;
   margin-bottom: 4rem;
   text-align: left;
   position: relative;
   overflow: hidden;
   box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+body.quarto-dark .hero-section {
+  background: linear-gradient(135deg, var(--surface-color) 0%, rgba(15, 23, 42, 0.8) 100%), url('hero.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(var(--grid-color) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+  opacity: 0.5;
 }
 
 .hero-section::before {
@@ -114,26 +138,36 @@ pre,
   right: 1.5rem;
   font-family: 'Fira Code', monospace;
   font-size: 0.75rem;
-  opacity: 0.4;
+  opacity: 0.6;
   letter-spacing: 0.1em;
+  z-index: 2;
 }
 
 .hero-section h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: 800;
   color: var(--heading-color);
   margin-bottom: 1rem;
-  border-left: 6px solid var(--primary-color);
+  border-left: 8px solid var(--primary-color);
   padding-left: 1.5rem;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 2px 10px rgba(255, 255, 255, 0.5);
+}
+
+body.quarto-dark .hero-section h1 {
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .hero-section .lead {
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   color: var(--text-color);
-  max-width: 600px;
+  max-width: 650px;
   margin-left: 2rem;
-  margin-bottom: 2rem;
-  opacity: 0.8;
+  margin-bottom: 2.5rem;
+  font-weight: 500;
+  position: relative;
+  z-index: 2;
 }
 
 .btn-hero {

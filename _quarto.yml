@@ -20,6 +20,7 @@ book:
     style: "docked"
     search: true
     collapse-level: 1
+  number-chapters: false
   chapters:
     - index.qmd
     - intro.qmd
