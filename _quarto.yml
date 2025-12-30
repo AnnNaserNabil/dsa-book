@@ -7,7 +7,7 @@ project:
     browser: true
 
 book:
-  title: "Data Structures & Algorithms: Problem Solving Guide"
+  title: "Turtle DSA"
   author: "Your Name"
   date: "2025"
   site-url: https://annnasernabil.github.io/dsa-book
@@ -67,7 +67,7 @@ format:
     code-fold: true
     code-tools: true
     code-copy: hover
-    favicon: favicon.ico
+    favicon: favicon.png
     logo: logo.png
     
   pdf:

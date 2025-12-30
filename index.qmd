@@ -1,51 +1,146 @@
 ---
-title: "My DSA Journey: From Confusion to Clarity"
+title: "Turtle DSA"
+page-layout: full
 format: html
 ---
 
 ```{=html}
 <div class="jumbotron text-center">
-  <h1 class="display-4">My DSA Journey</h1>
-  <p class="lead">A developer's path to mastering Data Structures & Algorithms</p>
+  <h1 class="display-3">Turtle DSA</h1>
+  <p class="lead">From Confusion to Clarity: A Developer's Guide to Mastering Algorithms</p>
   <hr class="my-4">
   <p>Documenting the patterns, struggles, and "aha!" moments along the way.</p>
+  <a class="btn btn-light btn-lg" href="intro.qmd" role="button">Start Reading</a>
 </div>
 ```
+
+<div class="container">
 
 ## Why I Wrote This
 
 For the longest time, Data Structures and Algorithms felt like a black box to me. I would stare at LeetCode problems, completely blanking out, or memorize solutions without truly understanding the *why*.
 
-This "book" is my attempt to change that. It's not just a textbook; it's a collection of my personal notes, the patterns I've discovered, and the strategies that finally made things click. I wanted to document my journey from confusion to clarity, in the hope that it might help you too.
+This "book" is my attempt to change that. It's not just a textbook; it's a collection of my personal notes, the patterns I've discovered, and the strategies that finally made things click.
 
 ## My Learning Path
 
-I didn't learn everything at once. I took it one step at a time, building my mental models layer by layer. Here is the path I followed:
+I didn't learn everything at once. I took it one step at a time, building my mental models layer by layer.
 
-1.  **[The Mindset Shift](intro.qmd)**: How I learned to love problem-solving.
-2.  **[Arrays: The Foundation](arrays/index.qmd)**
-    *   Mastering the [Two Pointers](arrays/two-pointers.qmd) dance.
-    *   Seeing through the [Sliding Window](arrays/sliding-window.qmd).
-3.  **[Strings: More Than Text](strings/index.qmd)**
-    *   Unraveling [Anagrams](strings/anagrams.qmd) and patterns.
-4.  **[Linked Lists: Connecting the Dots](linked-lists/index.qmd)**
-5.  **[Stacks & Queues: Controlling Flow](stacks-queues/index.qmd)**
-6.  **[Trees: Branching Out](trees/index.qmd)**
-7.  **[Graphs: The Big Picture](graphs/index.qmd)**
-8.  **[Sorting & Searching: Finding Order](sorting-searching/index.qmd)**
-9.  **[Dynamic Programming: Breaking It Down](dynamic-programming/index.qmd)** (The beast I finally tamed!)
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+  <div class="col">
+    <a href="intro.qmd" class="chapter-link">
+      <div class="card chapter-card h-100">
+        <div class="card-body">
+          <h5 class="card-title">🧠 The Mindset Shift</h5>
+          <p class="card-text">How I learned to love problem-solving and stop fearing the interview.</p>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="col">
+    <a href="arrays/index.qmd" class="chapter-link">
+      <div class="card chapter-card h-100">
+        <div class="card-body">
+          <h5 class="card-title">📦 Arrays: The Foundation</h5>
+          <p class="card-text">Mastering Two Pointers, Sliding Windows, and other essential techniques.</p>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="col">
+    <a href="strings/index.qmd" class="chapter-link">
+      <div class="card chapter-card h-100">
+        <div class="card-body">
+          <h5 class="card-title">🧵 Strings: More Than Text</h5>
+          <p class="card-text">Unraveling Anagrams, Palindromes, and pattern matching.</p>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="col">
+    <a href="linked-lists/index.qmd" class="chapter-link">
+      <div class="card chapter-card h-100">
+        <div class="card-body">
+          <h5 class="card-title">🔗 Linked Lists</h5>
+          <p class="card-text">Connecting the dots and understanding pointers.</p>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="col">
+    <a href="stacks-queues/index.qmd" class="chapter-link">
+      <div class="card chapter-card h-100">
+        <div class="card-body">
+          <h5 class="card-title">🥞 Stacks & Queues</h5>
+          <p class="card-text">Controlling flow with LIFO and FIFO structures.</p>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="col">
+    <a href="trees/index.qmd" class="chapter-link">
+      <div class="card chapter-card h-100">
+        <div class="card-body">
+          <h5 class="card-title">🌳 Trees: Branching Out</h5>
+          <p class="card-text">Recursion, traversals, and hierarchical data.</p>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="col">
+    <a href="graphs/index.qmd" class="chapter-link">
+      <div class="card chapter-card h-100">
+        <div class="card-body">
+          <h5 class="card-title">🕸️ Graphs: The Big Picture</h5>
+          <p class="card-text">BFS, DFS, and modeling real-world connections.</p>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="col">
+    <a href="sorting-searching/index.qmd" class="chapter-link">
+      <div class="card chapter-card h-100">
+        <div class="card-body">
+          <h5 class="card-title">🔍 Sorting & Searching</h5>
+          <p class="card-text">Finding order in chaos. Binary search and merge sort.</p>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <div class="col">
+    <a href="dynamic-programming/index.qmd" class="chapter-link">
+      <div class="card chapter-card h-100">
+        <div class="card-body">
+          <h5 class="card-title">💡 Dynamic Programming</h5>
+          <p class="card-text">Breaking complex problems down. The beast finally tamed!</p>
+        </div>
+      </div>
+    </a>
+  </div>
+
+</div>
+
+<br>
 
 ## How I Use These Notes
 
 Instead of dry theory, I focus on:
-- **Intuition over Rigor**: I care more about understanding *how* it works than proving it mathematically.
-- **Visuals**: I draw diagrams because code can be hard to read.
-- **Patterns**: I look for common templates that solve multiple problems.
 
-## Join the Journey
+*   **Intuition over Rigor**: Understanding *how* it works > proving it mathematically.
+*   **Visuals**: Diagrams because code can be hard to read.
+*   **Patterns**: Common templates that solve multiple problems.
 
-This is a living document. As I learn new things and solve new problems, I'll add them here.
+<div class="alert alert-info" role="alert">
+  <strong>Join the Journey:</strong> This is a living document. As I learn new things, I'll add them here.
+</div>
 
-If you're reading this, I hope these notes serve as a friendly companion on your own journey. You don't need a PhD to be good at this—just curiosity and a bit of persistence.
-
-*Let's get coding.*
+</div>
