@@ -14,7 +14,7 @@ format: html
 </div>
 ```
 
-<div class="container">
+::: {.container}
 
 ## Why I Wrote This
 
@@ -143,4 +143,4 @@ Instead of dry theory, I focus on:
   <strong>Join the Journey:</strong> This is a living document. As I learn new things, I'll add them here.
 </div>
 
-</div>
+:::
