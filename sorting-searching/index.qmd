@@ -1,4 +1,3 @@
-```
 ---
 title: "Sorting & Searching"
 format: html

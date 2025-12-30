@@ -1,4 +1,3 @@
-```
 ---
 title: "Strings"
 description: "Master essential string manipulation techniques and algorithms"

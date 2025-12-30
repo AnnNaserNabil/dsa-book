@@ -1,12 +1,10 @@
 ---
-title: "Stacks and Queues"
+title: "Stacks & Queues"
 description: "Master stack and queue data structures and their applications"
 date: "2025-12-31"
 execute:
   echo: false
   warning: false
----
-title: "Stacks & Queues"
 format: html
 toc: true
 ---

@@ -18,6 +18,12 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Hide chapter numbers in sidebar and main content if needed */
+.sidebar-navigation .chapter-number,
+.quarto-title-block .chapter-number {
+  display: none !important;
+}
+
 /* Hide Default Quarto Metadata */
 .quarto-title-meta {
   display: none !important;
