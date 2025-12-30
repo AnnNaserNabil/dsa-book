@@ -1,0 +1,28 @@
+---
+title: "About the Author"
+format: html
+---
+
+# About the Author
+
+## Your Name
+
+[Your Name] is a software engineer with a passion for teaching and problem solving. With years of experience in the tech industry, [he/she/they] has helped countless students and professionals master data structures and algorithms.
+
+## About This Book
+
+"Data Structures & Algorithms: Problem Solving Guide" was born out of a desire to create a practical, hands-on resource for learning DSA. Unlike traditional textbooks that focus heavily on theory, this book emphasizes problem-solving patterns and techniques that are directly applicable to coding interviews and real-world software development.
+
+### Philosophy
+
+The core philosophy of this book is **"Learn by Doing"**. We believe that the best way to understand complex algorithms is to implement them and use them to solve problems.
+
+### Acknowledgments
+
+Special thanks to the open-source community and the many contributors who have helped improve this book.
+
+## Contact
+
+- **GitHub**: [github.com/yourusername](https://github.com/yourusername)
+- **Twitter**: [@yourhandle](https://twitter.com/yourhandle)
+- **LinkedIn**: [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)

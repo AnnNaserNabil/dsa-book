@@ -20,7 +20,7 @@ Strings are fundamental data structures that represent sequences of characters. 
 
 ### 2. Common Operations
 - Reversing strings
-- Anagrams and palindromes
+- [Anagrams and Frequency Counting](anagrams.qmd)
 - String encoding/decoding
 - String matching algorithms
 

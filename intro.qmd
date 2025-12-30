@@ -101,12 +101,12 @@ Data structures and algorithms (DSA) form the foundation of computer science and
    - Check if a string is a palindrome
    - Find the first non-repeating character in a string
 
-2. **Arrays**
+2. **[Arrays](arrays/index.qmd)**
    - Two Sum
    - Best Time to Buy and Sell Stock
    - Product of Array Except Self
 
-3. **Strings**
+3. **[Strings](strings/index.qmd)**
    - Valid Parentheses
    - Longest Substring Without Repeating Characters
    - Group Anagrams

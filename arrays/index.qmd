@@ -77,54 +77,13 @@ arr.remove(3)       # O(n) by value
 
 Two pointers is a technique where we maintain two references to positions in the array and move them based on certain conditions.
 
-**When to use:**
-- When you need to find a pair of elements that meet certain criteria
-- When the array is sorted
-- When you need to find subarrays with specific properties
-
-**Example:** Find two numbers in a sorted array that sum to a target.
-
-```python
-def two_sum_sorted(nums, target):
-    left, right = 0, len(nums) - 1
-    while left < right:
-        current_sum = nums[left] + nums[right]
-        if current_sum == target:
-            return [left, right]
-        elif current_sum < target:
-            left += 1
-        else:
-            right -= 1
-    return [-1, -1]
-```
+**[Read more about Two Pointers](two-pointers.qmd)**
 
 ### Sliding Window
 
 The sliding window technique is used to perform a required operation on a specific window size of a given array or linked list.
 
-**When to use:**
-- When the problem involves subarrays/substrings with certain conditions
-- When you need to find the longest/shortest subarray with specific properties
-- When the array contains only positive numbers (for variable-size window)
-
-**Example:** Find the maximum sum of a subarray of size k.
-
-```python
-def max_subarray_sum(nums, k):
-    if k > len(nums):
-        return 0
-    
-    # Calculate sum of first window
-    window_sum = sum(nums[:k])
-    max_sum = window_sum
-    
-    # Slide the window
-    for i in range(len(nums) - k):
-        window_sum = window_sum - nums[i] + nums[i + k]
-        max_sum = max(max_sum, window_sum)
-    
-    return max_sum
-```
+**[Read more about Sliding Window](sliding-window.qmd)**
 
 ### Prefix Sum
 
