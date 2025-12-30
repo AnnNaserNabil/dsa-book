@@ -28,23 +28,13 @@ book:
 
 website:
   title: "Data Structures & Algorithms: Problem Solving Guide"
-  site-url: https://yourusername.github.io/dsa-book
-  repo-url: https://github.com/yourusername/dsa-book
-  repo-actions: ["source", "edit", "issue", "sponsor"]
+  site-url: https://annnasernabil.github.io/dsa-book
+  repo-url: https://github.com/AnnNaserNabil/dsa-book
+  repo-actions: ["source", "edit", "issue"]
   repo-branch: main
   page-navigation: true
-  breadcrumbs: true
   twitter-card: true
   open-graph: true
-  site-favicon: favicon.ico
-  site-logo: logo.png
-  
-  navbar:
-    background: "primary"
-    search: true
-    right:
-      - icon: github
-        href: https://github.com/yourusername/dsa-book
 
 execute:
   freeze: auto
@@ -61,6 +51,8 @@ format:
     code-fold: true
     code-tools: true
     code-copy: hover
+    favicon: favicon.ico
+    logo: logo.png
     
   pdf:
     documentclass: book
