@@ -88,6 +88,8 @@ pre,
   font-weight: 800;
   background: linear-gradient(to right, var(--primary-color), var(--accent-color));
   -webkit-background-clip: text;
+  background-clip: text;
+  /* Fixed lint: added standard property */
   -webkit-text-fill-color: transparent;
   margin-bottom: 1.5rem;
 }
@@ -105,33 +107,38 @@ pre,
   padding: 0.75rem 2rem;
   border-radius: 9999px;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border: none;
-  box-shadow: 0 0 15px rgba(79, 70, 229, 0.4);
+  box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);
   text-decoration: none;
   display: inline-block;
 }
 
 .btn-hero:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 25px rgba(79, 70, 229, 0.6);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(79, 70, 229, 0.5);
   color: white;
+}
+
+.btn-hero:active {
+  transform: translateY(-1px) scale(0.98);
 }
 
 /* Glassmorphism Cards */
 .glass-card {
   background: var(--card-bg);
   backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--card-border);
   border-radius: var(--border-radius);
   padding: 1.5rem;
   height: 100%;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: var(--shadow-sm);
 }
 
 .glass-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px) scale(1.01);
   box-shadow: var(--shadow-lg);
   border-color: var(--primary-color);
 }
@@ -158,14 +165,86 @@ a.card-link {
 
 /* Navbar */
 .navbar {
-  background: rgba(255, 255, 255, 0.8) !important;
-  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.65) !important;
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 0.75rem 1rem;
+  transition: all 0.3s ease;
 }
 
 body.quarto-dark .navbar {
-  background: rgba(15, 23, 42, 0.8) !important;
+  background: rgba(15, 23, 42, 0.65) !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.navbar-brand {
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  font-size: 1.35rem;
+  background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  /* Standard property for compatibility */
+}
+
+.navbar-nav .nav-link {
+  font-weight: 500;
+  color: var(--text-color) !important;
+  margin: 0 0.5rem;
+  position: relative;
+  transition: color 0.3s ease;
+  opacity: 0.8;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: var(--primary-color) !important;
+  opacity: 1;
+}
+
+/* Animated Underline for Links */
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: var(--primary-color);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+  width: 100%;
+}
+
+/* Search Box Styling */
+.navbar .search-input {
+  border-radius: 9999px;
+  background-color: rgba(0, 0, 0, 0.05);
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+  padding-left: 1rem;
+}
+
+.navbar .search-input:focus {
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+  border-color: var(--primary-color);
+}
+
+body.quarto-dark .navbar .search-input {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+body.quarto-dark .navbar .search-input:focus {
+  background-color: rgba(30, 41, 59, 0.8);
 }
 
 /* Sidebar */
@@ -235,6 +314,124 @@ div.sourceCode {
   }
 }
 
+/* Sidebar */
+#quarto-sidebar {
+  background: var(--bg-color);
+  border-right: 1px solid var(--card-border);
+  padding-top: 1rem;
+}
+
+.sidebar-item-container .active {
+  border-left: 4px solid var(--primary-color) !important;
+  background: linear-gradient(to right, rgba(79, 70, 229, 0.08), transparent) !important;
+  font-weight: 600;
+  color: var(--primary-color) !important;
+}
+
+.sidebar-link {
+  border-radius: 0 20px 20px 0;
+  margin-right: 1rem;
+  transition: all 0.2s ease;
+}
+
+.sidebar-link:hover {
+  background-color: var(--surface-color);
+  color: var(--primary-color) !important;
+}
+
+/* Page Navigation (Prev/Next) */
+.nav-page {
+  border: 1px solid var(--card-border);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  transition: all 0.3s ease;
+  background: var(--card-bg);
+}
+
+.nav-page:hover {
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+/* Callouts */
+.callout {
+  border-radius: 0.75rem;
+  border: none;
+  border-left: 5px solid transparent;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.callout-header {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  opacity: 0.8;
+}
+
+.callout-note {
+  background-color: rgba(79, 70, 229, 0.05);
+  border-left-color: var(--primary-color);
+}
+
+.callout-tip {
+  background-color: rgba(16, 185, 129, 0.05);
+  border-left-color: #10B981;
+}
+
+.callout-warning {
+  background-color: rgba(245, 158, 11, 0.05);
+  border-left-color: #F59E0B;
+}
+
+/* Code Blocks */
+div.sourceCode {
+  background-color: var(--surface-color);
+  border-radius: 0.75rem;
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-sm);
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+/* Topic Accents */
+.topic-arrays {
+  border-top: 5px solid var(--topic-arrays);
+}
+
+.topic-linked-lists {
+  border-top: 5px solid var(--topic-linked-lists);
+}
+
+.topic-graphs {
+  border-top: 5px solid var(--topic-graphs);
+}
+
+.topic-dp {
+  border-top: 5px solid var(--topic-dp);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .fade-in {
-  animation: fadeIn 0.6s ease-out forwards;
+  animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
 }
