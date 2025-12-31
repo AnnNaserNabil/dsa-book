@@ -353,7 +353,6 @@ div.sourceCode pre {
 }
 
 .footer-metadata p::before {
-  content: "const ";
   color: var(--primary-color);
   opacity: 0.6;
 }
