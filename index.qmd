@@ -10,7 +10,6 @@ format:
 <div class="hero-section fade-in">
   <h1>DSA Turtles</h1>
   <p class="lead">A programmer's notebook on Data Structures and Algorithms. Documenting the path from confusion to clarity.</p>
-  <a href="intro.qmd" class="btn-hero" role="button">cat intro.md</a>
 </div>
 ```
 
